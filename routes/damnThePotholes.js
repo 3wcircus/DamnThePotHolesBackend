@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const PotHoleHit = require('../models/PotHoleHit');
+const PotHoleHit = require('../Models/PotHoleHit');
 
 // Routes for app controlers
 router.route('/')
