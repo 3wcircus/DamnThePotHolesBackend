@@ -142,10 +142,8 @@ block content
             });
 
 
-            let plist = [#{pot_holes}];
 
-            plist.forEach(function(sc) {
-                // superchargers.forEach(function(sc) {
+                superchargers.forEach(function(sc) {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(sc.latitude, sc.longitude),
                     icon: {
