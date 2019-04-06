@@ -19,27 +19,28 @@ router.route('/')
 
 router.route('/seed')
     .get(function (req, res) {
+        console.log("*** CREATING SEED DATA ***");
         const holeSeedData = [
             {
                 date: new Date(),
-                long: 37.782551,
-                lat: 122.445368,
+                long: -89.7663223,
+                lat: 35.1940644,
                 x: -1.7812861,
                 y: 2.1930888,
                 z: 9.050082
             },
             {
                 date: new Date(),
-                long: 37.754665,
-                lat: 122.403242,
+                long: -89.8963223,
+                lat: 35.403242,
                 x: -1.7812861,
                 y: 2.1930888,
                 z: 9.050082
             },
             {
                 date: new Date(),
-                long: 37.760556,
-                lat: 122.445368,
+                long: -89.760556,
+                lat: 35.445368,
                 x: -1.7812861,
                 y: 2.1930888,
                 z: 9.050082
@@ -47,7 +48,13 @@ router.route('/seed')
         ];
 
         PotHoleHit.create(holeSeedData, function (err, results) {
-            res.send(results);
+            if (err) {
+                res.send(err);
+            }
+            else {
+                // We got results
+                res.send(results);
+            }
         });
     });
 

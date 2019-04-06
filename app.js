@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Set up mongoose connection
 let mongoose = require('mongoose');
 // NOTE: This URL should point to the database, not the collection as that is determined in the model
-let mongoDB = 'mongodb+srv://app_dtp:DTPP0tH0l3@cluster0-mhpvz.gcp.mongodb.net/DamnThePotholes?retryWrites=true';
+let mongoDB = 'mongodb+srv://app_dtp:DTPP0tH0l3@cluster0-mhpvz.gcp.mongodb.net/DamnThePotHoles?retryWrites=true';
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
