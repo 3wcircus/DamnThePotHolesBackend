@@ -8,8 +8,8 @@ router.get('/', function (req, res, next) {
     // TODO:Figure out how not to exclude the dat field
     var dataFilter = {
         __v: false,
-        _id: false,
-        date: false
+        _id: false
+
     };
 
     // Pull hits from remote Mongo instance

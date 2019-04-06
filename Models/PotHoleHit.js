@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const PotHoleHitsSchema = new Schema(
     {
-        date: Date,
+        date: String,
         long: Number,
         lat: Number,
         x: Number,
