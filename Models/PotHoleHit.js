@@ -8,7 +8,8 @@ const PotHoleHitsSchema = new Schema(
         lat: Number,
         x: Number,
         y: Number,
-        z: Number
+        z: Number,
+        marker: Number
     }
 );
 
