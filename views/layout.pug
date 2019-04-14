@@ -3,5 +3,18 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    //added bootstrap to build nav bar on the layout page
+    link(rel='stylesheet', href='/stylesheets/css/bootstrap.css')
+
   body
+    block nav
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href="#") Gosh Dang Potholes
+          div.collapse.navbar-collapse#navbarNavAltMarkup
+            div.navbar-nav
+              a.nav-item.nav-link(href="#") Home
+              a.nav-item.nav-link(href="#") Lorum Ipsum
+              a.nav-item.nav-link(href="#") Bacon Ipsum
     block content
+
+    script(type='text/javascript' src='/js/bootstrap.js')
