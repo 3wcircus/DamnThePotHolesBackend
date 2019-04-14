@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //Set up mongoose connection
 let mongoose = require('mongoose');
 // NOTE: This URL should point to the database, not the collection as that is determined in the model
