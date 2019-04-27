@@ -8,8 +8,8 @@ router.route('/')
         res.send('Get a map')
     })
     .post(function (req, res) {
-        console.log('Add a Bump')
-        PotHoleHit.create(req.body).then(function (bump){
+        console.log(`Add a Bump: ${req.body}`);
+        PotHoleHit.create(req.body).then(function (bump) {
             res.send(bump);
         })
     })
@@ -50,8 +50,7 @@ router.route('/seed')
         PotHoleHit.create(holeSeedData, function (err, results) {
             if (err) {
                 res.send(err);
-            }
-            else {
+            } else {
                 // We got results
                 res.send(results);
             }
