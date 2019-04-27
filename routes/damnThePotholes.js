@@ -2,20 +2,23 @@ var express = require('express');
 var router = express.Router();
 const PotHoleHit = require('../Models/PotHoleHit');
 
-// Routes for app controlers
+
+
+
 router.route('/')
-    .get(function (req, res) {
-        res.send('Get a map')
-    })
     .post(function (req, res) {
-        console.log(`Add a Bump: ${req.body}`);
+        if (!req.body) {
+ // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
+            // console.log("No Request Body");
+            res.send({});
+            return;
+        }
+        // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
+        // console.log("Recording a hit");
         PotHoleHit.create(req.body).then(function (bump) {
             res.send(bump);
         })
     })
-    .put(function (req, res) {
-        res.send('Update a map')
-    });
 
 router.route('/seed')
     .get(function (req, res) {
@@ -56,5 +59,18 @@ router.route('/seed')
             }
         });
     });
+
+// Routes for app controlers
+router.route('/')
+    .get(function (req, res) {
+        res.send('Get a map')
+    })
+    // .post(function (req, res) {
+    //     res.send("Create a map")
+    // })
+    // .put(function (req, res) {
+    //     res.send('Update a map')
+    // });
+
 
 module.exports = router;

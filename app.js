@@ -37,6 +37,8 @@ if (isDev) {
     mongoDB = config.db;
 }
 
+console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
+
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 
 let db = mongoose.connection;
