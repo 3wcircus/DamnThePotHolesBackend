@@ -18,7 +18,7 @@ router.route('/')
         PotHoleHit.create(req.body).then(function (bump) {
             res.send(bump);
         })
-    })
+    });
 
 router.route('/seed')
     .get(function (req, res) {
@@ -64,13 +64,7 @@ router.route('/seed')
 router.route('/')
     .get(function (req, res) {
         res.send('Get a map')
-    })
-    // .post(function (req, res) {
-    //     res.send("Create a map")
-    // })
-    // .put(function (req, res) {
-    //     res.send('Update a map')
-    // });
+    });
 
 
 module.exports = router;
