@@ -3,12 +3,10 @@ var router = express.Router();
 const PotHoleHit = require('../Models/PotHoleHit');
 
 
-
-
 router.route('/')
     .post(function (req, res) {
         if (!req.body) {
- // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
+            // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
             // console.log("No Request Body");
             res.send({});
             return;
@@ -30,7 +28,8 @@ router.route('/seed')
                 lat: 35.1940644,
                 x: -1.7812861,
                 y: 2.1930888,
-                z: 9.050082
+                z: 9.050082,
+                marker: 0
             },
             {
                 date: new Date(),
@@ -38,7 +37,8 @@ router.route('/seed')
                 lat: 35.403242,
                 x: -1.7812861,
                 y: 2.1930888,
-                z: 9.050082
+                z: 9.050082,
+                marker: 240
             },
             {
                 date: new Date(),
@@ -46,7 +46,8 @@ router.route('/seed')
                 lat: 35.445368,
                 x: -1.7812861,
                 y: 2.1930888,
-                z: 9.050082
+                z: 9.050082,
+                marker: 60
             }
         ];
 
