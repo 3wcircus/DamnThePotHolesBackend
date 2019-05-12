@@ -1,8 +1,42 @@
 var express = require('express');
 var router = express.Router();
+let geo = require('geolib');
+
 const PotHoleHit = require('../Models/PotHoleHit');
 
+// proto group commons
+router.route('/grouptest')
+    .get(function (req, res) {
+        PotHoleHit.find({},{},function (err, result) {
+            if (err)
 
+                res.send(err);
+            else {
+                let modArray = result.map(function (hit) {
+                    return {
+                        latitude: hit.lat,
+                        longitude: hit.long
+                    }
+                });
+
+                // Rebuild an array from sorted collection
+                let newArray = geo.orderByDistance({latitude: 0, longitude:0},modArray).map(function (hit){
+                    return result[hit.key];
+                });
+                // Now my array is sorted
+                res.send(newArray);
+            }
+
+        })
+});
+
+router.route('/agetest')
+    .get(function (req, res) {
+
+    });
+
+
+// Base route that displays the current home page
 router.route('/')
     .post(function (req, res) {
         if (!req.body) {
@@ -18,6 +52,7 @@ router.route('/')
         })
     });
 
+// Generate some test data
 router.route('/seed')
     .get(function (req, res) {
         console.log("*** CREATING SEED DATA ***");
@@ -64,7 +99,7 @@ router.route('/seed')
 // Routes for app controlers
 router.route('/')
     .get(function (req, res) {
-        res.send('Get a map')
+        res.send('Get a Job')
     });
 
 
