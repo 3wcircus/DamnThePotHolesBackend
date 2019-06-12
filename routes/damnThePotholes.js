@@ -4,6 +4,17 @@ let geo = require('geolib');
 
 const PotHoleHit = require('../Models/PotHoleHit');
 
+function treatAsUTC(date) {
+    var result = new Date(date);
+    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+    return result;
+}
+
+function daysBetween(startDate, endDate) {
+    var millisecondsPerDay = 24 * 60 * 60 * 1000;
+    return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+}
+
 // proto group commons
 router.route('/grouptest')
     .get(function (req, res) {
@@ -25,6 +36,9 @@ router.route('/grouptest')
                 });
                 // Now my array is sorted
                 res.send(newArray);
+
+                // Now iterate through and combine pts within 5 meters of each other
+
             }
 
         })
@@ -33,6 +47,43 @@ router.route('/grouptest')
 router.route('/agetest')
     .get(function (req, res) {
 
+        let age = req.query.age;
+        if (age)
+        {
+            console.log(age);
+            age = parseInt(age);
+        }
+        PotHoleHit.find({},{},function (err, result) {
+            if (err)
+
+                res.send(err);
+            else {
+                let newArray = result.filter(function (hit) {
+                    let dateToday = Date.now();
+                    let dateVal = Date.parse(hit.date);
+                    let dateDateVal = new Date(dateVal);
+                    let dayDiff = daysBetween(dateDateVal,dateToday);
+                    // console.log(dayDiff);
+                    if (dayDiff >= age)
+                    {
+                        console.log(dateDateVal.toDateString());
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+
+                });
+
+
+                // Now my array is aged
+                res.send(newArray);
+            }
+
+        })
+
     });
 
 
@@ -40,7 +91,7 @@ router.route('/agetest')
 router.route('/')
     .post(function (req, res) {
         if (!req.body) {
-            // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
+            // FIXME: why does just trying to log to console render a template? And here it will case an exception
             // console.log("No Request Body");
             res.send({});
             return;
