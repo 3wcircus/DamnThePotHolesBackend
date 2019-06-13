@@ -9,7 +9,10 @@ const PotHoleHitsSchema = new Schema(
         x: Number,
         y: Number,
         z: Number,
-        marker: Number
+        marker: Number,
+        lastx: Number,
+        lasty: Number,
+        lastz: Number
     }
 );
 

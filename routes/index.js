@@ -12,9 +12,9 @@ router.get('/', function (req, res, next) {
     };
 
     // Pull hits from remote Mongo instance
-    Pot_Holes.find({}, dataFilter,function(err, ph_recs) { //Use the find method on the data model to search DB
+    Pot_Holes.find({}, dataFilter, function (err, ph_recs) { //Use the find method on the data model to search DB
         if (err) {
-            console.log("Error getting hit records: \n"+ph_recs);
+            console.log("Error getting hit records: \n" + ph_recs);
             res.send(err);
         } else {
             // No exception, so inject hits and render

@@ -18,7 +18,7 @@ function daysBetween(startDate, endDate) {
 // proto group commons
 router.route('/grouptest')
     .get(function (req, res) {
-        PotHoleHit.find({},{},function (err, result) {
+        PotHoleHit.find({}, {}, function (err, result) {
             if (err)
 
                 res.send(err);
@@ -31,7 +31,7 @@ router.route('/grouptest')
                 });
 
                 // Rebuild an array from sorted collection
-                let newArray = geo.orderByDistance({latitude: 0, longitude:0},modArray).map(function (hit){
+                let newArray = geo.orderByDistance({latitude: 0, longitude: 0}, modArray).map(function (hit) {
                     return result[hit.key];
                 });
                 // Now my array is sorted
@@ -42,35 +42,36 @@ router.route('/grouptest')
             }
 
         })
-});
+    });
 
 router.route('/agetest')
     .get(function (req, res) {
 
         let age = req.query.age;
-        if (age)
-        {
+        if (age) {
             console.log(age);
             age = parseInt(age);
+        } else {
+            age = -1;
         }
-        PotHoleHit.find({},{},function (err, result) {
+        PotHoleHit.find({}, {}, function (err, result) {
             if (err)
 
                 res.send(err);
             else {
                 let newArray = result.filter(function (hit) {
+                    if (age < 1) {
+                        return true;
+                    }
                     let dateToday = Date.now();
                     let dateVal = Date.parse(hit.date);
                     let dateDateVal = new Date(dateVal);
-                    let dayDiff = daysBetween(dateDateVal,dateToday);
+                    let dayDiff = daysBetween(dateDateVal, dateToday);
                     // console.log(dayDiff);
-                    if (dayDiff >= age)
-                    {
+                    if (dayDiff >= age) {
                         console.log(dateDateVal.toDateString());
                         return true;
-                    }
-                    else
-                    {
+                    } else {
                         return false;
                     }
 
@@ -86,6 +87,48 @@ router.route('/agetest')
 
     });
 
+router.route('/filtertest')
+    .get(function (req, res) {
+
+        let age = req.query.age;
+        if (age) {
+            console.log(age);
+            age = parseInt(age);
+        } else {
+            age = -1;
+        }
+        PotHoleHit.find({}, {}, function (err, result) {
+            if (err)
+
+                res.send(err);
+            else {
+                let newArray = result.filter(function (hit) {
+                    if (age < 1) {
+                        return true;
+                    }
+                    let dateToday = Date.now();
+                    let dateVal = Date.parse(hit.date);
+                    let dateDateVal = new Date(dateVal);
+                    let dayDiff = daysBetween(dateDateVal, dateToday);
+                    // console.log(dayDiff);
+                    if (dayDiff <= age) {
+                        console.log(dateDateVal.toDateString());
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+
+                });
+
+
+                // Now my array is aged
+                res.send(newArray);
+            }
+
+        })
+
+    });
 
 // Base route that displays the current home page
 router.route('/')
