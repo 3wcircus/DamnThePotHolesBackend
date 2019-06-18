@@ -1,18 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
+// This schema describes the model for a pothole hit reported by a collector
+// TODO: Use actual Date data types
 const PotHoleHitsSchema = new Schema(
     {
         userTag: String,
         date: String,
-        long: Number,
-        lat: Number,
+        longitude: Number,
+        latitude: Number,
         x: Number,
         y: Number,
         z: Number,
         marker: Number,
         lastx: Number,
         lasty: Number,
-        lastz: Number
+        lastz: Number,
+        active: {
+            type: Boolean,
+            default: true
+        }
     }
 );
 

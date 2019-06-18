@@ -35,8 +35,8 @@ block content
 
             holes.forEach(function (sc) {
                 //     console.log(`*** MAKING MARKERS ***`);
-                let myLat = parseFloat(sc.lat);
-                let myLong = (parseFloat(sc.long) * 1);
+                let myLat = parseFloat(sc.latitude);
+                let myLong = (parseFloat(sc.longitude) * 1);
                 console.log(`*** MAKING MARKERS ${myLat} ${myLong} ***`);
                 let myLatlng = new google.maps.LatLng({lat: myLat, lng: myLong});
                 console.log(myLatlng);
@@ -61,7 +61,7 @@ block content
 
                 let marker = new google.maps.Marker({
                     position: myLatlng,
-                    title: `${sc.date} : ${sc.userTag}\nlat:${sc.lat}, long:${sc.long}, x:${sc.x}, y:${sc.y}, z:${sc.z}`,
+                    title: `${sc.date} : ${sc.userTag}\nlat:${sc.latitude}, long:${sc.longitude}, x:${sc.x}, y:${sc.y}, z:${sc.z}`,
                     map: myMap,
                     icon: myIcon,
                     animation: google.maps.Animation.DROP
