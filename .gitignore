@@ -3,7 +3,7 @@
 logs/*
 
 # exception to the rule
-!logs/.gitkeep
+!logs/README
 
 *.log
 npm-debug.log*
