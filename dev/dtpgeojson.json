@@ -1,0 +1,4121 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.767594,
+          35.2045019
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:25:30 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.0821792,
+        "y": 9.691729,
+        "z": 1.8195933,
+        "lastx": -1.0821792,
+        "lasty": 9.691729,
+        "lastz": 1.8195933
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9824783,
+          35.1512162
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:42:53 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.1452048,
+        "y": 9.3661175,
+        "z": 0.842759,
+        "lastx": 2.1452048,
+        "lasty": 9.3661175,
+        "lastz": 0.842759
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9899275,
+          35.1518226
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:43:30 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.060566,
+        "y": 16.625336,
+        "z": 3.667917,
+        "lastx": -4.060566,
+        "lasty": 16.625336,
+        "lastz": 3.667917
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0051835,
+          35.1533879
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:45:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.0821792,
+        "y": 9.931149,
+        "z": 4.55856,
+        "lastx": -1.0821792,
+        "lasty": 9.931149,
+        "lastz": 4.55856
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0109951,
+          35.1533969
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:45:42 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.4460979,
+        "y": 6.6079965,
+        "z": 1.685518,
+        "lastx": -1.4460979,
+        "lasty": 6.6079965,
+        "lastz": 1.685518
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0113098,
+          35.153214
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:45:45 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.514688,
+        "y": 13.139379,
+        "z": 4.903325,
+        "lastx": -3.514688,
+        "lasty": 13.139379,
+        "lastz": 4.903325
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0128418,
+          35.1523261
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:46:26 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.7469909,
+        "y": 7.843405,
+        "z": 3.265691,
+        "lastx": 0.7469909,
+        "lasty": 7.843405,
+        "lastz": 3.265691
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.012894,
+          35.1519341
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 07:46:31 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.3654714,
+        "y": 2.930503,
+        "z": 1.5035586,
+        "lastx": 2.3654714,
+        "lasty": 2.930503,
+        "lastz": 1.5035586
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0156078,
+          35.1510131
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:31:29 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.4133554,
+        "y": 8.810662,
+        "z": 2.0207062,
+        "lastx": -2.4133554,
+        "lasty": 8.810662,
+        "lastz": 2.0207062
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0140377,
+          35.1508696
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:32:53 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -7.2304893,
+        "y": 11.358093,
+        "z": 1.1300632,
+        "lastx": -7.2304893,
+        "lasty": 11.358093,
+        "lastz": 1.1300632
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0138237,
+          35.1508668
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:32:55 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.3438582,
+        "y": 10.601525,
+        "z": 2.6144683,
+        "lastx": -5.3438582,
+        "lasty": 10.601525,
+        "lastz": 2.6144683
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0138237,
+          35.1508668
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:32:56 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.6296098,
+        "y": 7.5465236,
+        "z": 5.45878,
+        "lastx": -3.6296098,
+        "lasty": 7.5465236,
+        "lastz": 5.45878
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0138237,
+          35.1508668
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:32:57 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.1890767,
+        "y": 9.3661175,
+        "z": 2.96881,
+        "lastx": -3.1890767,
+        "lasty": 9.3661175,
+        "lastz": 2.96881
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.013089,
+          35.151186
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:02 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.667917,
+        "y": 8.944737,
+        "z": 0.38307226,
+        "lastx": -3.667917,
+        "lasty": 8.944737,
+        "lastz": 0.38307226
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0130036,
+          35.1512727
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:03 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.7581203,
+        "y": 13.120225,
+        "z": 4.060566,
+        "lastx": -12.497733,
+        "lasty": 1.6759412,
+        "lastz": 7.1059904
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0127218,
+          35.1521227
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:11 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.4213795,
+        "y": 6.7708025,
+        "z": 1.4556746,
+        "lastx": -3.064578,
+        "lasty": 9.959879,
+        "lastz": 0.49799395
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0127114,
+          35.1522327
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.3654714,
+        "y": 9.931149,
+        "z": 1.9536686,
+        "lastx": -2.3654714,
+        "lasty": 9.931149,
+        "lastz": 1.9536686
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0126808,
+          35.1524451
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.9919758,
+        "y": 12.6222315,
+        "z": 2.1930888,
+        "lastx": 1.9919758,
+        "lasty": 12.6222315,
+        "lastz": 2.1930888
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.012653,
+          35.1526366
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.9456444,
+        "y": 12.488156,
+        "z": 3.6296098,
+        "lastx": 1.0821792,
+        "lasty": 12.488156,
+        "lastz": 3.6296098
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0126401,
+          35.1527089
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 3.265691,
+        "y": 13.484144,
+        "z": 7.3071036,
+        "lastx": 3.265691,
+        "lasty": 13.484144,
+        "lastz": 7.3071036
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0126192,
+          35.1527653
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:18 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 4.6926355,
+        "y": 8.341399,
+        "z": -0.59376204,
+        "lastx": -0.10534488,
+        "lasty": 14.4609785,
+        "lastz": 0.6703765
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0073616,
+          35.153407
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:50 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.3694834,
+        "y": 11.032481,
+        "z": 2.834735,
+        "lastx": -1.3694834,
+        "lasty": 11.032481,
+        "lastz": 2.834735
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0067655,
+          35.1533631
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:33:52 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.4309563,
+        "y": 8.925584,
+        "z": 5.813122,
+        "lastx": -0.4309563,
+        "lasty": 8.925584,
+        "lastz": 5.813122
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9861462,
+          35.1513861
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:36:49 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.4269443,
+        "y": 9.950302,
+        "z": 1.7046716,
+        "lastx": 1.4269443,
+        "lasty": 9.950302,
+        "lastz": 1.7046716
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9818623,
+          35.1509527
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:37:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.18195933,
+        "y": 14.633361,
+        "z": 1.4077905,
+        "lastx": -0.18195933,
+        "lasty": 14.633361,
+        "lastz": 1.4077905
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9817521,
+          35.150923
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:37:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.36391866,
+        "y": 10.362105,
+        "z": 4.1276035,
+        "lastx": 0.36391866,
+        "lasty": 10.362105,
+        "lastz": 4.1276035
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9815627,
+          35.1507551
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:37:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 4.1946416,
+        "y": 4.261679,
+        "z": 0.05746084,
+        "lastx": 4.1946416,
+        "lasty": 4.261679,
+        "lastz": 0.05746084
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9703845,
+          35.1460248
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:39:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -3.3327289,
+        "y": 13.905523,
+        "z": 3.265691,
+        "lastx": -3.3327289,
+        "lasty": 13.905523,
+        "lastz": 3.265691
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9702296,
+          35.1460102
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:39:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.30645782,
+        "y": 7.2783732,
+        "z": 3.41892,
+        "lastx": -0.30645782,
+        "lasty": 7.2783732,
+        "lastz": 3.41892
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9669716,
+          35.1458541
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:39:44 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.16280572,
+        "y": 7.5944076,
+        "z": 7.240066,
+        "lastx": 0.16280572,
+        "lasty": 7.5944076,
+        "lastz": 7.240066
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9609561,
+          35.146351
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:40:37 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.3024458,
+        "y": 5.8226986,
+        "z": 5.161899,
+        "lastx": -1.3024458,
+        "lasty": 5.8226986,
+        "lastz": 5.161899
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9517182,
+          35.1480231
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:41:20 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -3.3327289,
+        "y": 7.5848308,
+        "z": 7.824251,
+        "lastx": -3.3327289,
+        "lasty": 7.5848308,
+        "lastz": 7.824251
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9514695,
+          35.1480456
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:41:20 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.94810385,
+        "y": 12.612655,
+        "z": 3.0071173,
+        "lastx": 0.94810385,
+        "lasty": 12.612655,
+        "lastz": 3.0071173
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9223545,
+          35.1460539
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:43:04 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.0278234,
+        "y": 8.456321,
+        "z": 6.895301,
+        "lastx": -5.0278234,
+        "lasty": 8.456321,
+        "lastz": 6.895301
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8504923,
+          35.1694022
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:47:21 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.23942018,
+        "y": 5.4204726,
+        "z": 12.11466,
+        "lastx": -0.23942018,
+        "lasty": 5.4204726,
+        "lastz": 12.11466
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.839777,
+          35.1736292
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:47:55 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.5993267,
+        "y": 12.200851,
+        "z": -0.7086837,
+        "lastx": -1.5993267,
+        "lasty": 12.200851,
+        "lastz": -0.7086837
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7675033,
+          35.2042072
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:52:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.371036,
+        "y": 11.070788,
+        "z": 8.341399,
+        "lastx": -3.371036,
+        "lasty": 11.070788,
+        "lastz": 8.341399
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7667939,
+          35.2042401
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:52:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.06703765,
+        "y": 7.7572136,
+        "z": -0.6799533,
+        "lastx": -0.06703765,
+        "lasty": 7.7572136,
+        "lastz": -0.6799533
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7641946,
+          35.2035459
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:52:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 4.462792,
+        "y": 5.602432,
+        "z": 1.0821792,
+        "lastx": 4.462792,
+        "lasty": 5.602432,
+        "lastz": 1.0821792
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7640648,
+          35.2010153
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:52:56 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.2601264,
+        "y": 0.30645782,
+        "z": 7.297527,
+        "lastx": 2.2601264,
+        "lasty": 0.30645782,
+        "lastz": 7.297527
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7643861,
+          35.1980139
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:53:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.480393,
+        "y": 8.90643,
+        "z": 3.1794999,
+        "lastx": -2.480393,
+        "lasty": 8.90643,
+        "lastz": 3.1794999
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7644072,
+          35.1978836
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:53:20 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.8770541,
+        "y": 11.118672,
+        "z": 3.620033,
+        "lastx": -1.8770541,
+        "lasty": 11.118672,
+        "lastz": 3.620033
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7649784,
+          35.195444
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:53:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.8619126,
+        "y": 4.6160207,
+        "z": 7.8625584,
+        "lastx": 0.8619126,
+        "lasty": 4.6160207,
+        "lastz": 7.8625584
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624254,
+          35.1922696
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:54:57 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.6367273,
+        "y": 9.883265,
+        "z": -2.8060043,
+        "lastx": -6.6367273,
+        "lasty": 9.883265,
+        "lastz": -2.8060043
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623809,
+          35.1922956
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:02 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 8.130709,
+        "y": -8.868123,
+        "z": -9.011775,
+        "lastx": 8.130709,
+        "lasty": -8.868123,
+        "lastz": -9.011775
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623779,
+          35.1922968
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:03 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.2273839,
+        "y": -9.634268,
+        "z": -2.6527755,
+        "lastx": 3.2273839,
+        "lasty": -9.634268,
+        "lastz": -2.6527755
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.762376,
+          35.1922976
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:04 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.8115692,
+        "y": -6.8569937,
+        "z": -6.244078,
+        "lastx": 3.8115692,
+        "lasty": -6.8569937,
+        "lastz": -6.244078
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623755,
+          35.1922957
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:09 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 5.2385135,
+        "y": -11.836933,
+        "z": -2.4516625,
+        "lastx": 5.2385135,
+        "lasty": -11.836933,
+        "lastz": -2.4516625
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623783,
+          35.1922944
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:10 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 6.6750345,
+        "y": -8.829816,
+        "z": -1.3694834,
+        "lastx": 7.9391727,
+        "lasty": -13.512875,
+        "lastz": -2.327164
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623821,
+          35.1922943
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:11 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.514688,
+        "y": -12.564771,
+        "z": -0.58418524,
+        "lastx": 3.514688,
+        "lasty": -12.564771,
+        "lastz": -0.58418524
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623868,
+          35.1922948
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:12 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.2632318,
+        "y": -4.7500963,
+        "z": -3.4859576,
+        "lastx": -6.2632318,
+        "lasty": -4.7500963,
+        "lastz": -3.4859576
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623921,
+          35.1922953
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.405331,
+        "y": -4.012682,
+        "z": 5.554548,
+        "lastx": -4.405331,
+        "lasty": -4.012682,
+        "lastz": 5.554548
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623992,
+          35.1922954
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:14 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.339846,
+        "y": -7.441179,
+        "z": 2.4420857,
+        "lastx": -6.339846,
+        "lasty": -7.441179,
+        "lastz": 2.4420857
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624077,
+          35.1922948
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.5777135,
+        "y": -4.76925,
+        "z": 0.02873042,
+        "lastx": -4.5777135,
+        "lasty": -4.76925,
+        "lastz": 0.02873042
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624166,
+          35.1922931
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.673482,
+        "y": -8.580819,
+        "z": -0.047884032,
+        "lastx": -4.673482,
+        "lasty": -8.580819,
+        "lastz": -0.047884032
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624253,
+          35.1922893
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -5.6120086,
+        "y": -4.6255975,
+        "z": 4.0414124,
+        "lastx": -5.6120086,
+        "lasty": -4.6255975,
+        "lastz": 4.0414124
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624333,
+          35.1922835
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:18 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.4340615,
+        "y": -3.3423057,
+        "z": 5.813122,
+        "lastx": -3.7732618,
+        "lasty": -2.5187001,
+        "lastz": 5.449203
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624439,
+          35.1922649
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:20 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -10.084377,
+        "y": -2.135628,
+        "z": 12.612655,
+        "lastx": -10.084377,
+        "lasty": -2.135628,
+        "lastz": 12.612655
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624462,
+          35.1922557
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:22 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.719813,
+        "y": -13.263878,
+        "z": -4.4819455,
+        "lastx": 2.719813,
+        "lasty": -13.263878,
+        "lastz": -4.4819455
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624449,
+          35.1922514
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:23 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 4.6351743,
+        "y": -11.903971,
+        "z": 0.12449849,
+        "lastx": 5.554548,
+        "lasty": -11.674128,
+        "lastz": -0.45968673
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624342,
+          35.1922386
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 5.2959743,
+        "y": -10.67814,
+        "z": -1.6280571,
+        "lastx": 5.2959743,
+        "lasty": -10.67814,
+        "lastz": -1.6280571
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624239,
+          35.1922296
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:26 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 5.554548,
+        "y": -11.501745,
+        "z": -2.585738,
+        "lastx": 5.554548,
+        "lasty": -11.501745,
+        "lastz": -2.585738
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624103,
+          35.1922194
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:55:27 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 5.4779334,
+        "y": -10.486604,
+        "z": -3.5529952,
+        "lastx": 5.4779334,
+        "lasty": -10.486604,
+        "lastz": -3.5529952
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623501,
+          35.1921227
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:56:32 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 6.9719152,
+        "y": -14.164097,
+        "z": -13.464991,
+        "lastx": 6.9719152,
+        "lasty": -14.164097,
+        "lastz": -13.464991
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623539,
+          35.192123
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:56:32 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.8619126,
+        "y": -8.628703,
+        "z": -2.9783869,
+        "lastx": -0.8619126,
+        "lasty": -8.628703,
+        "lastz": -2.9783869
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623561,
+          35.192133
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:56:35 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 6.3302693,
+        "y": -7.843405,
+        "z": 4.8841715,
+        "lastx": 6.3302693,
+        "lasty": -7.843405,
+        "lastz": 4.8841715
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623406,
+          35.1921569
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.842759,
+        "y": -12.593501,
+        "z": -0.94810385,
+        "lastx": 0.842759,
+        "lasty": -12.593501,
+        "lastz": -0.94810385
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623438,
+          35.1921432
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:10 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.5570073,
+        "y": -8.973468,
+        "z": -6.167464,
+        "lastx": 2.5570073,
+        "lasty": -8.973468,
+        "lastz": -6.167464
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623538,
+          35.1921324
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:12 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -12.028469,
+        "y": -5.056554,
+        "z": 6.847417,
+        "lastx": -12.028469,
+        "lasty": -5.056554,
+        "lastz": 6.847417
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623564,
+          35.192134
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -10.113108,
+        "y": -2.528277,
+        "z": 10.726024,
+        "lastx": -10.113108,
+        "lasty": -2.528277,
+        "lastz": 10.726024
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623554,
+          35.1921371
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:14 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.0716953,
+        "y": -1.9728222,
+        "z": 9.911995,
+        "lastx": -6.0716953,
+        "lasty": -1.9728222,
+        "lastz": 9.911995
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.762352,
+          35.1921401
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.9416323,
+        "y": -4.960786,
+        "z": -2.0111294,
+        "lastx": -4.9416323,
+        "lasty": -4.960786,
+        "lastz": -2.0111294
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623479,
+          35.1921431
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.6703765,
+        "y": -2.9400797,
+        "z": -0.7469909,
+        "lastx": -0.6703765,
+        "lasty": -2.9400797,
+        "lastz": -0.7469909
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623448,
+          35.1921481
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -10.362105,
+        "y": 0.50757074,
+        "z": 2.0590134,
+        "lastx": -10.362105,
+        "lasty": 0.50757074,
+        "lastz": 2.0590134
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623413,
+          35.1921543
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:18 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -8.293514,
+        "y": -0.545878,
+        "z": 7.3166804,
+        "lastx": -6.8186865,
+        "lasty": -0.545878,
+        "lastz": 7.3166804
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623365,
+          35.1921609
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:19 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.2042184,
+        "y": -19.622877,
+        "z": 3.064578,
+        "lastx": -4.367024,
+        "lasty": -10.43872,
+        "lastz": 3.064578
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623239,
+          35.1921737
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:21 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.4260373,
+        "y": -3.4476504,
+        "z": -0.6799533,
+        "lastx": -6.4260373,
+        "lasty": -3.4476504,
+        "lastz": -0.6799533
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623177,
+          35.1921808
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:22 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.8665705,
+        "y": -3.016694,
+        "z": 0.7182605,
+        "lastx": -6.8665705,
+        "lasty": -3.016694,
+        "lastz": 0.7182605
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.762314,
+          35.1921906
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:23 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -12.018892,
+        "y": -3.964798,
+        "z": -0.9768343,
+        "lastx": -12.018892,
+        "lasty": -3.964798,
+        "lastz": -0.9768343
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623122,
+          35.1922029
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:24 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.9184666,
+        "y": -8.0445175,
+        "z": -2.0494366,
+        "lastx": -5.9184666,
+        "lasty": -8.0445175,
+        "lastz": -2.0494366
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623147,
+          35.1922169
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -11.645397,
+        "y": -16.261417,
+        "z": 7.97748,
+        "lastx": -11.645397,
+        "lasty": -16.261417,
+        "lastz": 7.97748
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623222,
+          35.1922323
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:26 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -9.576807,
+        "y": -10.151415,
+        "z": 6.4739213,
+        "lastx": -9.576807,
+        "lasty": -10.151415,
+        "lastz": 6.4739213
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623325,
+          35.1922481
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:27 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.169923,
+        "y": -18.282124,
+        "z": 5.8322754,
+        "lastx": -3.169923,
+        "lasty": -18.282124,
+        "lastz": 5.8322754
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623594,
+          35.1922975
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:30 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -3.1316159,
+        "y": -13.321339,
+        "z": -2.2601264,
+        "lastx": -3.1316159,
+        "lasty": -13.321339,
+        "lastz": -2.2601264
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623526,
+          35.1923319
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:34 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.654328,
+        "y": 3.1316159,
+        "z": 1.1204864,
+        "lastx": -3.821146,
+        "lasty": 1.8674773,
+        "lastz": -1.2162545
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.762338,
+          35.1923348
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -2.6144683,
+        "y": 4.855441,
+        "z": 5.554548,
+        "lastx": -2.6144683,
+        "lasty": 4.855441,
+        "lastz": 5.554548
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623291,
+          35.1923346
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:37 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -4.4244847,
+        "y": -16.328455,
+        "z": 2.4133554,
+        "lastx": -4.4244847,
+        "lasty": -16.328455,
+        "lastz": 2.4133554
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623201,
+          35.1923332
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.815581,
+        "y": -10.97502,
+        "z": -2.7485435,
+        "lastx": -2.815581,
+        "lasty": -10.97502,
+        "lastz": -2.7485435
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622887,
+          35.1923266
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:57:44 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -7.632715,
+        "y": -10.6877165,
+        "z": -4.462792,
+        "lastx": -7.632715,
+        "lasty": -10.6877165,
+        "lastz": -4.462792
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622949,
+          35.1923515
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:02 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.3215994,
+        "y": -10.812215,
+        "z": -2.528277,
+        "lastx": -1.3215994,
+        "lasty": -10.812215,
+        "lastz": -2.528277
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622937,
+          35.1923602
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:05 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.72939,
+        "y": -13.417107,
+        "z": 1.0055647,
+        "lastx": -2.72939,
+        "lasty": -13.417107,
+        "lastz": 1.0055647
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622932,
+          35.1923632
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:06 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -19.603724,
+        "y": -2.432509,
+        "z": -41.122807,
+        "lastx": -0.6991069,
+        "lasty": -11.903971,
+        "lastz": 8.24563
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622922,
+          35.1923667
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:07 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -9.595961,
+        "y": 0.36391866,
+        "z": 4.673482,
+        "lastx": -9.595961,
+        "lasty": 0.36391866,
+        "lastz": 4.673482
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622905,
+          35.1923744
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:09 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.5737014,
+        "y": -9.634268,
+        "z": -6.081272,
+        "lastx": -5.5737014,
+        "lasty": -9.634268,
+        "lastz": -6.081272
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622645,
+          35.1923946
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -6.751649,
+        "y": -8.303091,
+        "z": 2.1547816,
+        "lastx": -6.751649,
+        "lasty": -8.303091,
+        "lastz": 2.1547816
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.76225,
+          35.1924278
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.1316159,
+        "y": -14.422671,
+        "z": 3.1794999,
+        "lastx": -3.1316159,
+        "lasty": -14.422671,
+        "lastz": 3.1794999
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7622924,
+          35.1924177
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:58:48 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.2601264,
+        "y": -10.70687,
+        "z": -3.1507695,
+        "lastx": -2.2601264,
+        "lasty": -10.70687,
+        "lastz": -3.1507695
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623104,
+          35.1923978
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.5505357,
+        "y": -4.357447,
+        "z": -1.0630256,
+        "lastx": -6.5505357,
+        "lasty": -4.357447,
+        "lastz": -1.0630256
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623337,
+          35.192394
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.064578,
+        "y": -10.812215,
+        "z": -5.056554,
+        "lastx": -3.064578,
+        "lasty": -10.812215,
+        "lastz": -5.056554
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623287,
+          35.1923946
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:14 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.38773,
+        "y": -6.5026517,
+        "z": 2.3942018,
+        "lastx": -6.38773,
+        "lasty": -6.5026517,
+        "lastz": 2.3942018
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623241,
+          35.1923952
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.6120086,
+        "y": -2.030283,
+        "z": 4.9703627,
+        "lastx": -5.6120086,
+        "lasty": -2.030283,
+        "lastz": 4.9703627
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623354,
+          35.1923968
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -6.14831,
+        "y": -6.4260373,
+        "z": 1.4652514,
+        "lastx": -6.14831,
+        "lasty": -6.4260373,
+        "lastz": 1.4652514
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623446,
+          35.1923969
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.0374002,
+        "y": -7.7572136,
+        "z": 2.633622,
+        "lastx": -5.0374002,
+        "lasty": -7.7572136,
+        "lastz": 2.633622
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623554,
+          35.1923958
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:18 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -10.821792,
+        "y": -3.0454245,
+        "z": 7.1347213,
+        "lastx": -10.821792,
+        "lasty": -3.0454245,
+        "lastz": 7.1347213
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623669,
+          35.1923922
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:19 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -7.1730285,
+        "y": -4.1946416,
+        "z": 4.817134,
+        "lastx": -7.1730285,
+        "lasty": -4.1946416,
+        "lastz": 4.817134
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624256,
+          35.1922892
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:33 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -2.1930888,
+        "y": -15.399506,
+        "z": -5.45878,
+        "lastx": -2.1930888,
+        "lasty": -15.399506,
+        "lastz": -5.45878
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624272,
+          35.1922877
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:34 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 6.751649,
+        "y": -11.856087,
+        "z": -3.620033,
+        "lastx": 6.751649,
+        "lasty": -11.856087,
+        "lastz": -3.620033
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624308,
+          35.1922878
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:35 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.7102363,
+        "y": -15.792154,
+        "z": -1.2066777,
+        "lastx": 2.7102363,
+        "lasty": -15.792154,
+        "lastz": -1.2066777
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624362,
+          35.1922884
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.541866,
+        "y": -13.091495,
+        "z": -3.763685,
+        "lastx": -1.541866,
+        "lasty": -13.091495,
+        "lastz": -3.763685
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624432,
+          35.1922884
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:37 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.02873042,
+        "y": -14.355634,
+        "z": 2.4612393,
+        "lastx": -0.02873042,
+        "lasty": -14.355634,
+        "lastz": 2.4612393
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624524,
+          35.1922878
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:59:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -5.7843914,
+        "y": -15.26543,
+        "z": 8.916007,
+        "lastx": -5.7843914,
+        "lasty": -15.26543,
+        "lastz": 8.916007
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7625451,
+          35.1923187
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.8523358,
+        "y": -15.322891,
+        "z": 2.2409728,
+        "lastx": -0.8523358,
+        "lasty": -15.322891,
+        "lastz": 2.2409728
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7625401,
+          35.1923227
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.0757074,
+        "y": -3.964798,
+        "z": -4.9320555,
+        "lastx": -5.0757074,
+        "lasty": -3.964798,
+        "lastz": -4.9320555
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.762429,
+          35.1923221
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:17 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.751649,
+        "y": -0.60333884,
+        "z": 5.506664,
+        "lastx": -6.751649,
+        "lasty": -0.60333884,
+        "lastz": 5.506664
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7624016,
+          35.192333
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:27 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.9799395,
+        "y": -11.319786,
+        "z": -2.078167,
+        "lastx": -4.9799395,
+        "lasty": -11.319786,
+        "lastz": -2.078167
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623946,
+          35.1923357
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:28 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.8115692,
+        "y": -4.951209,
+        "z": -1.13964,
+        "lastx": -3.8115692,
+        "lasty": -4.951209,
+        "lastz": -1.13964
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623909,
+          35.1923381
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:29 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 5.0182467,
+        "y": -10.419566,
+        "z": -4.1371803,
+        "lastx": 3.8881836,
+        "lasty": -11.894394,
+        "lastz": -5.104438
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7623909,
+          35.19234
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:00:30 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.135628,
+        "y": -13.101071,
+        "z": -2.231396,
+        "lastx": -2.135628,
+        "lasty": -13.101071,
+        "lastz": -2.231396
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7642152,
+          35.1930974
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:05:42 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.18195933,
+        "y": 10.04607,
+        "z": 4.9895163,
+        "lastx": -0.18195933,
+        "lasty": 10.04607,
+        "lastz": 4.9895163
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7639662,
+          35.2017694
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:07:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.4748282,
+        "y": 8.437167,
+        "z": 1.7429788,
+        "lastx": -1.4748282,
+        "lasty": 8.437167,
+        "lastz": 1.7429788
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7653158,
+          35.204429
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:08:48 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.620033,
+        "y": 7.28795,
+        "z": 5.085284,
+        "lastx": 3.620033,
+        "lasty": 7.28795,
+        "lastz": 5.085284
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7670898,
+          35.2044356
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:08:57 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 4.55856,
+        "y": 6.9719152,
+        "z": 2.7964275,
+        "lastx": 4.55856,
+        "lasty": 6.9719152,
+        "lastz": 2.7964275
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7689108,
+          35.2044269
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:09:07 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.934515,
+        "y": 3.2848446,
+        "z": 4.3382936,
+        "lastx": 1.934515,
+        "lasty": 3.2848446,
+        "lastz": 4.3382936
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.773279,
+          35.2040235
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:10:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -2.2697031,
+        "y": 11.808203,
+        "z": 3.3614593,
+        "lastx": -2.2697031,
+        "lasty": 11.808203,
+        "lastz": 3.3614593
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9227511,
+          35.1463042
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:19:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -5.6790466,
+        "y": 23.846249,
+        "z": 0.37349546,
+        "lastx": 2.3942018,
+        "lasty": 0.59376204,
+        "lastz": 1.0247183
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.944341,
+          35.1482355
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:20:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.7868507,
+        "y": 6.579266,
+        "z": 2.5761611,
+        "lastx": 2.7868507,
+        "lasty": 6.579266,
+        "lastz": 2.5761611
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9448329,
+          35.1482232
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:20:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.59376204,
+        "y": 8.599973,
+        "z": 2.480393,
+        "lastx": 0.59376204,
+        "lasty": 8.599973,
+        "lastz": 2.480393
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9448329,
+          35.1482232
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:20:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.34476504,
+        "y": 9.232041,
+        "z": 2.27928,
+        "lastx": -0.34476504,
+        "lasty": 9.232041,
+        "lastz": 2.27928
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9536586,
+          35.14805
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:21:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 5.0374002,
+        "y": 6.6175733,
+        "z": 3.0071173,
+        "lastx": 5.0374002,
+        "lasty": 6.6175733,
+        "lastz": 3.0071173
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9669281,
+          35.1460086
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:22:46 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.5993267,
+        "y": 10.524911,
+        "z": 1.541866,
+        "lastx": -1.5993267,
+        "lasty": 10.524911,
+        "lastz": 1.541866
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9702514,
+          35.146173
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:23:02 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.514688,
+        "y": 13.771448,
+        "z": 1.8100165,
+        "lastx": -3.514688,
+        "lasty": 13.771448,
+        "lastz": 1.8100165
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9816003,
+          35.1487582
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:24:08 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 0.842759,
+        "y": 11.769896,
+        "z": 0.7661445,
+        "lastx": 0.842759,
+        "lasty": 11.769896,
+        "lastz": 0.7661445
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9816421,
+          35.1487931
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:24:10 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.2545617,
+        "y": 7.1251445,
+        "z": 4.5394063,
+        "lastx": 1.2545617,
+        "lasty": 7.1251445,
+        "lastz": 4.5394063
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9816674,
+          35.1488362
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:24:10 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.436521,
+        "y": 9.069236,
+        "z": 0.7469909,
+        "lastx": 1.436521,
+        "lasty": 9.069236,
+        "lastz": 0.7469909
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9813049,
+          35.1509956
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:25:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -7.383718,
+        "y": 15.361198,
+        "z": 1.7142484,
+        "lastx": -4.9320555,
+        "lasty": 16.4338,
+        "lastz": 0.9672575
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9813647,
+          35.1510499
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:25:36 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.7924154,
+        "y": 11.473015,
+        "z": 3.821146,
+        "lastx": -3.7924154,
+        "lasty": 11.473015,
+        "lastz": 3.821146
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.982378,
+          35.151177
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:25:43 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -5.209783,
+        "y": 16.481684,
+        "z": 0.7757214,
+        "lastx": -5.209783,
+        "lasty": 16.481684,
+        "lastz": 0.7757214
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9898761,
+          35.1518809
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:26:21 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.030283,
+        "y": 12.603078,
+        "z": 1.9057846,
+        "lastx": -2.030283,
+        "lasty": 12.603078,
+        "lastz": 1.9057846
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9900819,
+          35.1518984
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:26:21 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.11492168,
+        "y": 8.456321,
+        "z": 3.1028855,
+        "lastx": -0.11492168,
+        "lasty": 8.456321,
+        "lastz": 3.1028855
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0073261,
+          35.1536022
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:28:26 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -2.27928,
+        "y": 16.089035,
+        "z": 0.63206923,
+        "lastx": -2.27928,
+        "lasty": 16.089035,
+        "lastz": 0.63206923
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0086265,
+          35.1536562
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:28:32 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.5993267,
+        "y": 11.9135475,
+        "z": 1.3503298,
+        "lastx": -1.5993267,
+        "lasty": 11.9135475,
+        "lastz": 1.3503298
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0109915,
+          35.1533757
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:28:45 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -5.449203,
+        "y": 12.861651,
+        "z": 2.087744,
+        "lastx": -5.449203,
+        "lasty": 12.861651,
+        "lastz": 2.087744
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0113564,
+          35.153188
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 10:28:48 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 7.2783732,
+        "y": 9.069236,
+        "z": 2.7006595,
+        "lastx": 8.073248,
+        "lasty": 9.3182335,
+        "lastz": 3.1124623
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0144729,
+          35.1510194
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:16:03 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.0726024,
+        "y": 9.404425,
+        "z": 2.8538885,
+        "lastx": -1.0726024,
+        "lasty": 9.404425,
+        "lastz": 2.8538885
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0143513,
+          35.1510469
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:16:32 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.81402856,
+        "y": 14.681245,
+        "z": 1.8100165,
+        "lastx": -0.81402856,
+        "lasty": 14.681245,
+        "lastz": 1.8100165
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0117583,
+          35.152909
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:17:24 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 0.1340753,
+        "y": 8.169016,
+        "z": 2.9975405,
+        "lastx": 0.1340753,
+        "lasty": 8.169016,
+        "lastz": 2.9975405
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0094165,
+          35.1533402
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:17:25 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.80445176,
+        "y": 13.024457,
+        "z": 4.3766007,
+        "lastx": -0.80445176,
+        "lasty": 13.024457,
+        "lastz": 4.3766007
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0030877,
+          35.1530903
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:18:03 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.37349546,
+        "y": 8.226477,
+        "z": 1.685518,
+        "lastx": -0.37349546,
+        "lasty": 8.226477,
+        "lastz": 1.685518
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9819266,
+          35.151046
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:20:49 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.7661445,
+        "y": 8.121132,
+        "z": 2.528277,
+        "lastx": -0.7661445,
+        "lasty": 8.121132,
+        "lastz": 2.528277
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9815466,
+          35.1510048
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:20:51 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.08619126,
+        "y": 14.211981,
+        "z": 7.326257,
+        "lastx": -0.08619126,
+        "lasty": 14.211981,
+        "lastz": 7.326257
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.981362,
+          35.1509863
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:20:52 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.96881,
+        "y": 7.843405,
+        "z": 2.8443117,
+        "lastx": -2.96881,
+        "lasty": 7.843405,
+        "lastz": 2.8443117
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9752342,
+          35.1499747
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:21:30 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.265691,
+        "y": 15.02601,
+        "z": -0.23942018,
+        "lastx": -3.265691,
+        "lasty": 15.02601,
+        "lastz": -0.23942018
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9700306,
+          35.1494834
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:21:58 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.10534488,
+        "y": 5.1906295,
+        "z": 2.6910827,
+        "lastx": -1.8100165,
+        "lasty": 9.433155,
+        "lastz": 5.497087
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.969455,
+          35.1494526
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:22:01 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.5817258,
+        "y": 12.631808,
+        "z": 2.2026656,
+        "lastx": -3.5817258,
+        "lasty": 12.631808,
+        "lastz": 2.2026656
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9690846,
+          35.1494497
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:22:03 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.4708161,
+        "y": 8.331821,
+        "z": 2.5761611,
+        "lastx": -2.4708161,
+        "lasty": 8.331821,
+        "lastz": 2.5761611
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9675627,
+          35.1494548
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:22:09 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.23942018,
+        "y": 9.069236,
+        "z": 1.7238252,
+        "lastx": -0.23942018,
+        "lasty": 9.069236,
+        "lastz": 1.7238252
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9669556,
+          35.1494767
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:22:15 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.33518824,
+        "y": 7.422025,
+        "z": 3.3901896,
+        "lastx": 0.33518824,
+        "lasty": 7.422025,
+        "lastz": 3.3901896
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9613592,
+          35.1466371
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:24:51 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -0.62249243,
+        "y": 14.671668,
+        "z": 2.5474305,
+        "lastx": 1.0342951,
+        "lasty": 14.614207,
+        "lastz": 5.985504
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9613609,
+          35.1465961
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:24:52 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.32561144,
+        "y": 7.3549876,
+        "z": 1.5610195,
+        "lastx": -2.1643584,
+        "lasty": 11.137826,
+        "lastz": 2.1164744
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9539203,
+          35.1476011
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:25:35 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.18195933,
+        "y": 7.785944,
+        "z": 4.9320555,
+        "lastx": 0.18195933,
+        "lasty": 7.785944,
+        "lastz": 4.9320555
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9516345,
+          35.1481517
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:25:45 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.930503,
+        "y": 5.2002063,
+        "z": 1.6567876,
+        "lastx": 2.930503,
+        "lasty": 5.2002063,
+        "lastz": 1.6567876
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9513935,
+          35.14818
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:25:46 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.47884035,
+        "y": 11.243171,
+        "z": 2.7581203,
+        "lastx": -0.47884035,
+        "lasty": 11.243171,
+        "lastz": 2.7581203
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9441146,
+          35.1482795
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:26:13 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.3311762,
+        "y": 11.405977,
+        "z": 6.4068837,
+        "lastx": 1.3311762,
+        "lasty": 11.405977,
+        "lastz": 6.4068837
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9222285,
+          35.1458766
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:27:34 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -6.205771,
+        "y": 10.802638,
+        "z": -0.45010993,
+        "lastx": -6.205771,
+        "lasty": 10.802638,
+        "lastz": -0.45010993
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8847689,
+          35.1513552
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:29:49 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.5529952,
+        "y": 12.899959,
+        "z": 6.4164605,
+        "lastx": -3.5529952,
+        "lasty": 12.899959,
+        "lastz": 6.4164605
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8038095,
+          35.1899383
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:34:56 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.3503298,
+        "y": 11.21444,
+        "z": 1.4460979,
+        "lastx": -1.3503298,
+        "lasty": 11.21444,
+        "lastz": 1.4460979
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7674934,
+          35.2043346
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:38:22 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -5.056554,
+        "y": 10.084377,
+        "z": 7.144298,
+        "lastx": 1.2354081,
+        "lasty": 8.197746,
+        "lastz": 2.6527755
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7668315,
+          35.2043411
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:38:26 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.6376339,
+        "y": 7.4028716,
+        "z": 5.4683566,
+        "lastx": -1.6376339,
+        "lasty": 7.4028716,
+        "lastz": 5.4683566
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7642388,
+          35.2009541
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:39:07 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.61291564,
+        "y": 4.5681367,
+        "z": 1.5227122,
+        "lastx": -0.61291564,
+        "lasty": 4.5681367,
+        "lastz": 1.5227122
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7648234,
+          35.1963957
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 16:39:39 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.46926352,
+        "y": 9.950302,
+        "z": 1.9249382,
+        "lastx": 0.46926352,
+        "lasty": 9.950302,
+        "lastz": 1.9249382
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9807583,
+          35.1509812
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:42:55 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.92895025,
+        "y": 8.944737,
+        "z": 4.644751,
+        "lastx": -0.92895025,
+        "lasty": 8.944737,
+        "lastz": 4.644751
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9808047,
+          35.1509817
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:43:19 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 2.5953147,
+        "y": 9.212888,
+        "z": 0.1436521,
+        "lastx": 2.5953147,
+        "lasty": 9.212888,
+        "lastz": 0.1436521
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.982362,
+          35.1511752
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:44:09 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -2.1260512,
+        "y": 10.065224,
+        "z": 4.4436383,
+        "lastx": -2.1260512,
+        "lasty": 10.065224,
+        "lastz": 4.4436383
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0092075,
+          35.1536379
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:46:24 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.633622,
+        "y": 12.229582,
+        "z": 3.0454245,
+        "lastx": 2.633622,
+        "lasty": 12.229582,
+        "lastz": 3.0454245
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0109204,
+          35.1534351
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:46:34 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -4.5872903,
+        "y": 11.109096,
+        "z": 0.076614454,
+        "lastx": -4.5872903,
+        "lasty": 11.109096,
+        "lastz": 0.076614454
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0110347,
+          35.1533849
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:46:35 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.12449849,
+        "y": 10.783484,
+        "z": 2.327164,
+        "lastx": 0.12449849,
+        "lasty": 10.783484,
+        "lastz": 2.327164
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0128492,
+          35.1525339
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 08:47:12 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": -2.9017725,
+        "y": 16.309301,
+        "z": -1.3311762,
+        "lastx": -2.9017725,
+        "lasty": 16.309301,
+        "lastz": -1.3311762
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0140548,
+          35.1509173
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:56:29 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 0.16280572,
+        "y": 9.222465,
+        "z": 2.327164,
+        "lastx": 0.16280572,
+        "lasty": 9.222465,
+        "lastz": 2.327164
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0139581,
+          35.1508952
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:56:35 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.5705963,
+        "y": 15.198392,
+        "z": 2.2409728,
+        "lastx": 1.5705963,
+        "lasty": 15.198392,
+        "lastz": 2.2409728
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0127852,
+          35.1521809
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:56:56 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -10.141838,
+        "y": 11.3964,
+        "z": 1.3215994,
+        "lastx": -5.3821654,
+        "lasty": 7.240066,
+        "lastz": 3.9935284
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0126478,
+          35.1527441
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:57:05 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.4037786,
+        "y": 4.76925,
+        "z": -0.37349546,
+        "lastx": 2.4037786,
+        "lasty": 4.76925,
+        "lastz": -0.37349546
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0073652,
+          35.1534593
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:57:40 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.2082303,
+        "y": 12.047623,
+        "z": 3.1603463,
+        "lastx": 3.2082303,
+        "lasty": 12.047623,
+        "lastz": 3.1603463
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0000236,
+          35.1527885
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:58:46 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.8866309,
+        "y": 7.8050976,
+        "z": 2.1547816,
+        "lastx": 1.8866309,
+        "lasty": 7.8050976,
+        "lastz": 2.1547816
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9999441,
+          35.1527841
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:58:48 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.0151415,
+        "y": 14.642938,
+        "z": 1.8483237,
+        "lastx": 1.0151415,
+        "lasty": 14.642938,
+        "lastz": 1.8483237
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9998516,
+          35.1527737
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 16:58:48 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 3.074155,
+        "y": 10.486604,
+        "z": 3.2848446,
+        "lastx": 3.074155,
+        "lasty": 10.486604,
+        "lastz": 3.2848446
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9958693,
+          35.152303
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:00:16 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -3.0262709,
+        "y": 9.892841,
+        "z": 3.0933087,
+        "lastx": -3.0262709,
+        "lasty": 9.892841,
+        "lastz": 3.0933087
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9820632,
+          35.1509572
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:01:27 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.30645782,
+        "y": 7.6231384,
+        "z": 3.916914,
+        "lastx": -0.30645782,
+        "lasty": 7.6231384,
+        "lastz": 3.916914
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9819783,
+          35.1509426
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:01:27 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.7429788,
+        "y": 10.831368,
+        "z": 5.841852,
+        "lastx": 1.7429788,
+        "lasty": 10.831368,
+        "lastz": 5.841852
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9819091,
+          35.1509307
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:01:29 CDT 2019",
+        "userTag": "KEY",
+        "marker": 0,
+        "x": 11.473015,
+        "y": 8.90643,
+        "z": 6.4164605,
+        "lastx": 11.473015,
+        "lasty": 8.90643,
+        "lastz": 6.4164605
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9815908,
+          35.1507406
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:01:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.1164744,
+        "y": 9.921572,
+        "z": 0.90021986,
+        "lastx": 2.1164744,
+        "lasty": 9.921572,
+        "lastz": 0.90021986
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9815695,
+          35.148526
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:03:50 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 1.7525556,
+        "y": 15.95496,
+        "z": -0.34476504,
+        "lastx": -7.345411,
+        "lasty": 12.0571995,
+        "lastz": -0.34476504
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9704377,
+          35.14603
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:04:45 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 2.4420857,
+        "y": 6.799533,
+        "z": 2.0015526,
+        "lastx": 2.4420857,
+        "lasty": 6.799533,
+        "lastz": 2.0015526
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.967029,
+          35.1458016
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:04:59 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.0151415,
+        "y": 16.85518,
+        "z": 6.1195793,
+        "lastx": -1.0151415,
+        "lasty": 16.85518,
+        "lastz": 6.1195793
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9517577,
+          35.1480818
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:06:10 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -7.6231384,
+        "y": 8.781932,
+        "z": 2.7102363,
+        "lastx": -7.6231384,
+        "lasty": 8.781932,
+        "lastz": 2.7102363
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9253566,
+          35.146308
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:08:04 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -1.6376339,
+        "y": 12.200851,
+        "z": 0.50757074,
+        "lastx": -1.6376339,
+        "lasty": 12.200851,
+        "lastz": 0.50757074
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8978989,
+          35.1471631
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Mon Jun 17 17:10:12 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": -0.8331822,
+        "y": 8.274361,
+        "z": 2.9975405,
+        "lastx": -0.8331822,
+        "lasty": 8.274361,
+        "lastz": 2.9975405
+      }
+    }
+  ]
+}

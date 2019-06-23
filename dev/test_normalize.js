@@ -33,8 +33,8 @@ function sort_hits2(modArray) {
 function sort_hits(hitlist) {
     let modArray = hitlist.map(function (hit) {
         return {
-            latitude: hit.lat,
-            longitude: hit.long
+            latitude: hit.latitude,
+            longitude: hit.longitude
         }
     });
 
@@ -142,7 +142,7 @@ let json_hits = readTextFile('./testdata.json');
 
 // let hit_list = sort_hits2(json_hits);
 
-let hit_list = merge_hits(json_hits, 10);
+let hit_list = merge_hits(json_hits, 20);
 //
 // // Try to build a list with complete data
 // let hit_list = merged_json_hits.map(function (hit) {
@@ -152,18 +152,18 @@ let hit_list = merge_hits(json_hits, 10);
 //     });
 // });
 
-let mongoDB = config.db;
-
-
-console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
-
-mongoose.connect(mongoDB, {useNewUrlParser: true});
-
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// let mongoDB = config.db;
+//
+//
+// console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
+//
+// mongoose.connect(mongoDB, {useNewUrlParser: true});
+//
+// let db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 console.log("Updating records");
 // console.log(hit_list);
-hit_list.forEach(function (element) {
-    PotHoleHit.create(element);
-});
+// hit_list.forEach(function (element) {
+//     PotHoleHit.create(element);
+// });
 console.log("DONE");
