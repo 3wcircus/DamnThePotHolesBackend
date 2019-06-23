@@ -4,13 +4,25 @@ let geo = require('geolib');
 
 const PotHoleHit = require('../Models/PotHoleHit');
 
+const log = require('simple-node-logger');
+// create a rolling file logger based on date/time that fires process events
+const logger_opts = {
+    errorEventName:'error',
+    logDirectory:'./logs', // NOTE: folder must exist and be writable...
+    fileNamePattern:'dtp-<DATE>.log',
+    dateFormat:'YYYY.MM.DD'
+};
+const logger = log.createRollingFileLogger(logger_opts);
+
 function treatAsUTC(date) {
+    logger.debug(arguments.callee.name);
     var result = new Date(date);
     result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
     return result;
 }
 
 function daysBetween(startDate, endDate) {
+    logger.debug(arguments.callee.name);
     var millisecondsPerDay = 24 * 60 * 60 * 1000;
     return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
 }
@@ -18,6 +30,7 @@ function daysBetween(startDate, endDate) {
 // proto group commons
 router.route('/grouptest')
     .get(function (req, res) {
+        logger.debug(arguments.callee.name);
         PotHoleHit.find({}, {}, function (err, result) {
             if (err)
 
@@ -46,7 +59,7 @@ router.route('/grouptest')
 
 router.route('/agetest')
     .get(function (req, res) {
-
+        logger.debug(arguments.callee.name);
         let age = req.query.age;
         if (age) {
             console.log(age);
@@ -89,7 +102,7 @@ router.route('/agetest')
 
 router.route('/filtertest')
     .get(function (req, res) {
-
+        logger.debug(arguments.callee.name);
         let age = req.query.age;
         if (age) {
             console.log(age);
@@ -133,14 +146,15 @@ router.route('/filtertest')
 // Base route that displays the current home page
 router.route('/')
     .post(function (req, res) {
+        logger.debug(arguments.callee.name);
         if (!req.body) {
             // FIXME: why does just trying to log to console render a template? And here it will case an exception
-            // console.log("No Request Body");
+            logger.warn('No Request Body in Hit POST');
             res.send({});
             return;
         }
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
-        // console.log("Recording a hit");
+        logger.info('New Hit Received: ',req.body);
         PotHoleHit.create(req.body).then(function (bump) {
             res.send(bump);
         })
