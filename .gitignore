@@ -1,5 +1,9 @@
 # Logs
+# exclude everything
+logs/*
 
+# exception to the rule
+!logs/.gitkeep
 
 *.log
 npm-debug.log*
