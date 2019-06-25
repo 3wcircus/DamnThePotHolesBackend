@@ -1,16 +1,24 @@
-let createError, express, path, cookieParser, logger, indexRouter, usersRouter, potholeRoutes, seedRouter, app;
+let createError, express, path, cookieParser, indexRouter, usersRouter, potholeRoutes, seedRouter, app;
 createError = require('http-errors');
 express = require('express');
 path = require('path');
 cookieParser = require('cookie-parser');
-logger = require('morgan');
+// logger = require('morgan');
 indexRouter = require('./routes/index');
 usersRouter = require('./routes/users');
 potholeRoutes = require('./routes/damnThePotholes');
 const config = require('./config/config');
 const isDev = process.env.NODE_ENV !== 'production';
-
-console.log(`Server Running in DEV mode: ${isDev}`);
+// create a rolling file logger based on date/time that fires process events
+const log = require('simple-node-logger');
+const logger_opts = {
+    errorEventName:'error',
+    logDirectory:'./logs', // NOTE: folder must exist and be writable...
+    fileNamePattern:'dtp-<DATE>.log',
+    dateFormat:'YYYY.MM.DD'
+};
+const logger = log.createRollingFileLogger(logger_opts);
+logger.info('Server Running in DEV mode: ',isDev);
 
 app = express();
 
@@ -19,7 +27,7 @@ app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -37,7 +45,7 @@ if (isDev) {
     mongoDB = config.db;
 }
 
-console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
+logger.info('Connecting to MongoDB at ',mongoDB);
 
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 

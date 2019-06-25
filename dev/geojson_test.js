@@ -47,28 +47,6 @@ json_hits.forEach(function (element) {
         };
     geojson_hits.features.push(new_geo_json);
 
-
-    // geojson_hits.features.push('{\n' +
-    //     '"geometry": {\n' +
-    //     '"type": "Point",\n' +
-    //     '"coordinates": [\n' +
-    //     `${element.longitude},\n` +
-    //     `${element.latitude},\n` +
-    //     ']\n' +
-    //     '},\n' +
-    //     '"type": "Feature",\n' +
-    //     '"properties": {\n' +
-    //     `\"date\": \"${element.date}\",\n` +
-    //     `\"userTag\": \"${element.userTag}\",\n` +
-    //     `\"marker\": ${element.marker},\n` +
-    //     `\"x\": ${element.x},\n` +
-    //     `\"y\": ${element.y},\n` +
-    //     `\"z\": ${element.z},\n` +
-    //     `\"lastx\": ${element.lastx},\n` +
-    //     `\"lasty\": ${element.lasty},\n` +
-    //     `\"lastz\": ${element.lastz},\n` +
-    //     '}\n' +
-    //     '}');
 });
 
 console.log(JSON.stringify(geojson_hits));

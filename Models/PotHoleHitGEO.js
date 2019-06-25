@@ -5,18 +5,18 @@ const Schema = mongoose.Schema;
 
 var PotHoleHitsGEOSchema = new Schema({
     type: {type: String},
-    'geometry' : {
+    'geometry': {
         type: {type: String, default: 'Point'},
-        'coordinates' : {
-            'type' : [Number],
-            'index' : '2dsphere',
-            'required' : true
+        'coordinates': {
+            'type': [Number],
+            'index': '2dsphere',
+            'required': true
         }
     },
-    'properties' : {
-        'speed' : Number,
-        'measurement' : Number,
-        'quality' : String
+    'properties': {
+        'speed': Number,
+        'measurement': Number,
+        'quality': String
     }
 });
 
