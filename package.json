@@ -9,6 +9,7 @@
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "ejs-locals": "^1.0.2",
     "express": "~4.16.0",
     "geolib": "^2.0.24",
     "http-errors": "~1.6.2",

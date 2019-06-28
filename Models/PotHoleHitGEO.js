@@ -14,9 +14,15 @@ var PotHoleHitsGEOSchema = new Schema({
         }
     },
     'properties': {
-        'speed': Number,
-        'measurement': Number,
-        'quality': String
+        "date": String,
+        "userTag": String,
+        "marker": Number,
+        "x": Number,
+        "y": Number,
+        "z": Number,
+        "lastx": Number,
+        "lasty": Number,
+        "lastz": Number
     }
 });
 

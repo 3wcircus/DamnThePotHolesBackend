@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 let geo = require('geolib');
+let ejs = require('ejs-locals');
 
 const PotHoleHit = require('../Models/PotHoleHit');
 
 const log = require('simple-node-logger');
+
+
 // create a rolling file logger based on date/time that fires process events
 const logger_opts = {
     errorEventName:'error',
@@ -55,6 +58,34 @@ router.route('/grouptest')
             }
 
         })
+    });
+
+
+router.route('/ejs')
+    .get(function (req, res) {
+        logger.info(arguments.callee.name);
+        // Add a new source from our GeoJSON data and set the
+        // 'cluster' option to true. GL-JS will add the point_count property to your source data.
+        // TODO:Figure out how not to exclude the dat field
+        var dataFilter = {
+            __v: false,
+            _id: false
+        };
+
+        // Pull hits from remote Mongo instance
+        let ph_recs = null;
+        Pot_Holes.find({}, dataFilter, function (err, ph_recs) { //Use the find method on the data model to search DB
+            if (err) {
+                console.log("Error getting hit records: \n" + ph_recs);
+                res.send(err);
+            } else {
+                // No exception, so inject hits and render
+
+                console.log(`Successfully retrieved ${ph_recs}`)
+            }
+        });
+        res.render('index',{title: 'DTP Landing Page',
+            pot_holes: ph_recs});
     });
 
 router.route('/agetest')

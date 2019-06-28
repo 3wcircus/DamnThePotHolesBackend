@@ -20,12 +20,19 @@ const logger_opts = {
 const logger = log.createRollingFileLogger(logger_opts);
 logger.info('Server Running in DEV mode: ',isDev);
 
+
 app = express();
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+
+app.engine('ejs', require('ejs-locals'));
+// app.set('views', __dirname + '/templates');
+app.set('view engine', 'ejs');
+
+
+// app.set('view engine', 'pug');
 
 // app.use(logger('dev'));
 app.use(express.json());

@@ -1,5 +1,16 @@
 const PotHoleHit = require('../Models/PotHoleHit');
 
+const log = require('simple-node-logger');
+
+// create a rolling file logger based on date/time that fires process events
+const logger_opts = {
+    errorEventName:'error',
+    logDirectory:'./logs', // NOTE: folder must exist and be writable...
+    fileNamePattern:'dtp-<DATE>.log',
+    dateFormat:'YYYY.MM.DD'
+};
+
+const logger = log.createRollingFileLogger(logger_opts);
 exports.index = function(req, res) {
     res.send('NOT IMPLEMENTED: Site Home Page');
 };
@@ -27,13 +38,11 @@ exports.pothole_detail = function(req, res) {
 // Handle pothole hit create on POST.
 exports.pothole_create_post = function(req, res) {
     if (!req.body) {
-        // FIXME: why does just trying to log to console render a template? And here it will case an exception
-        // console.log("No Request Body");
+        logger.warn('No Request Body in Hit POST');
         res.send({response: 'ERROR'});
         return;
     }
-    // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
-    // console.log("Recording a hit");
+    logger.info('New Hit Received: ',req.body);
     PotHoleHit.create(req.body).then(function (bump) {
         bump.respone = "OK";
         res.send(bump);
