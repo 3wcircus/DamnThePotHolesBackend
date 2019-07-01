@@ -22,10 +22,14 @@ var PotHoleHitsGEOSchema = new Schema({
         "z": Number,
         "lastx": Number,
         "lasty": Number,
-        "lastz": Number
+        "lastz": Number,
+        "active": {
+            type: Boolean,
+            default: true
+        }
     }
 });
 
-const PotHoleHits = mongoose.model('PotHoleHits', PotHoleHitsGEOSchema);
+const PotHoleHitsG = mongoose.model('PotHoleHitsG', PotHoleHitsGEOSchema);
 
-module.exports = PotHoleHits;
+module.exports = PotHoleHitsG;

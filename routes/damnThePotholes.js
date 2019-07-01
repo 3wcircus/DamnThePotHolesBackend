@@ -3,17 +3,17 @@ var router = express.Router();
 let geo = require('geolib');
 let ejs = require('ejs-locals');
 
-const PotHoleHit = require('../Models/PotHoleHit');
+const PotHoleHitG = require('../Models/PotHoleHitGEO');
 
 const log = require('simple-node-logger');
 
 
 // create a rolling file logger based on date/time that fires process events
 const logger_opts = {
-    errorEventName:'error',
-    logDirectory:'./logs', // NOTE: folder must exist and be writable...
-    fileNamePattern:'dtp-<DATE>.log',
-    dateFormat:'YYYY.MM.DD'
+    errorEventName: 'error',
+    logDirectory: './logs', // NOTE: folder must exist and be writable...
+    fileNamePattern: 'dtp-<DATE>.log',
+    dateFormat: 'YYYY.MM.DD'
 };
 const logger = log.createRollingFileLogger(logger_opts);
 
@@ -66,6 +66,38 @@ router.route('/ejs')
         logger.info(arguments.callee.name);
         // Add a new source from our GeoJSON data and set the
         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
+        var dataFilter = {
+            __v: false,
+            _id: false
+        };
+
+        // Pull hits from remote Mongo instance
+        PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
+            if (err) {
+                console.log("Error getting hit records: \n" + potholes);
+                res.send(err);
+            } else {
+                // No exception, so inject hits and render
+
+                // console.log(`Successfully retrieved EJS ${ph_recs}`)
+                // potholes = ph_recs;
+                // console.log(potholes);
+                // let ph = JSON.parse(potholes);
+                res.render('index', {
+                    title: 'DTP Landing Page',
+                    pot_holes: potholes
+                });
+            }
+        });
+
+    });
+
+
+router.route('/ejsdata')
+    .get(function (req, res) {
+        logger.info(arguments.callee.name);
+        // Add a new source from our GeoJSON data and set the
+        // 'cluster' option to true. GL-JS will add the point_count property to your source data.
         // TODO:Figure out how not to exclude the dat field
         var dataFilter = {
             __v: false,
@@ -74,18 +106,18 @@ router.route('/ejs')
 
         // Pull hits from remote Mongo instance
         let ph_recs = null;
-        Pot_Holes.find({}, dataFilter, function (err, ph_recs) { //Use the find method on the data model to search DB
+        PotHoleHit.find({}, dataFilter, function (err, ph_recs) { //Use the find method on the data model to search DB
             if (err) {
                 console.log("Error getting hit records: \n" + ph_recs);
                 res.send(err);
             } else {
                 // No exception, so inject hits and render
 
-                console.log(`Successfully retrieved ${ph_recs}`)
+                // console.log(`Successfully retrieved EJS ${ph_recs}`)
             }
         });
-        res.render('index',{title: 'DTP Landing Page',
-            pot_holes: ph_recs});
+        // console.log(ph_recs);
+        res.send(ph_recs);
     });
 
 router.route('/agetest')
@@ -185,7 +217,7 @@ router.route('/')
             return;
         }
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
-        logger.info('New Hit Received: ',req.body);
+        logger.info('New Hit Received: ', req.body);
         PotHoleHit.create(req.body).then(function (bump) {
             res.send(bump);
         })

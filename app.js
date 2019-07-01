@@ -1,4 +1,5 @@
 let createError, express, path, cookieParser, indexRouter, usersRouter, potholeRoutes, seedRouter, app;
+// import 'bootstrap';
 createError = require('http-errors');
 express = require('express');
 path = require('path');
@@ -23,6 +24,10 @@ logger.info('Server Running in DEV mode: ',isDev);
 
 app = express();
 
+// Bootstrap
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

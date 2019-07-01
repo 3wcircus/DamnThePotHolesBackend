@@ -1,5 +1,5 @@
 const fs = require('fs');
-const PotHoleHit = require('../Models/PotHoleHitGEO');
+const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const config = require('../config/config');
 let mongoose = require('mongoose');
 
@@ -28,7 +28,7 @@ let geojson_hits = {
     "features": []
 };
 
-let mongoDB = config.db_dev;
+let mongoDB = config.db;
 
 
 console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
@@ -40,8 +40,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // Iterate each hit in old format and convert to geoJSON
 json_hits.forEach(function (element) {
-console.log("processing...");
-    let jsonhit = new PotHoleHit(
+// console.log("processing...");
+    let jsonhit = new PotHoleHitG(
             {
             "geometry": {
                 "type": "Point",
@@ -59,11 +59,12 @@ console.log("processing...");
                     "z": element.z,
                     "lastx": element.lastx,
                     "lasty": element.lasty,
-                    "lastz": element.lastz
+                    "lastz": element.lastz,
+                    "active": true
                 }
         });
     // geojson_hits.features.push(new_geo_json);
-    PotHoleHit.create(jsonhit);
+    PotHoleHitG.create(jsonhit);
 
 });
 

@@ -1,7 +1,6 @@
 <% layout('layout') -%>
 
 <div id='map'></div>
-
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoia3lhbmN5IiwiYSI6ImNqeDRuaGI2ZDBiank0NGtqZTRrb2VoaGQifQ.j1Ap9ucUmQy0_7FGOh8fVA';
     const map = new mapboxgl.Map({
@@ -12,10 +11,11 @@
         zoom: 9
     });
 
-    map.on('load', function () {
+    map.on('load', function() {
+        console.log("Head "+  '<%= title %>');
         map.addSource("potholes", {
             type: "geojson",
-            data: {ph_recs},
+            data:   {"type":"FeatureCollection","features": [<%- pot_holes %>]},
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)

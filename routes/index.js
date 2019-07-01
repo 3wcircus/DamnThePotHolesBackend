@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
         } else {
             // No exception, so inject hits and render
 
-            console.log(`Successfully retrieved ${ph_recs}`)
+            console.log(`Successfully Google retrieved ${ph_recs}`)
             res.render('google_maps', {
                 pot_holes: ph_recs,
                 google_map_api_key: 'AIzaSyAcQjbN0Wx4DzaqxJTiyOl5ZgaCvGQk4yI'
