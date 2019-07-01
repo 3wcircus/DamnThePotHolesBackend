@@ -61,7 +61,7 @@ router.route('/grouptest')
     });
 
 
-router.route('/ejs')
+router.route('/')
     .get(function (req, res) {
         logger.info(arguments.callee.name);
         // Add a new source from our GeoJSON data and set the
