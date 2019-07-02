@@ -3,9 +3,8 @@ var router = express.Router();
 const Pot_Holes = require('../Models/PotHoleHit');
 
 /* GET landing page. */
+// FIXME: Deprecate this as now redirects to geoJSON page
 router.get('/', function (req, res, next) {
-
-    // // TODO:Figure out how not to exclude the dat field
     // var dataFilter = {
     //     __v: false,
     //     _id: false
