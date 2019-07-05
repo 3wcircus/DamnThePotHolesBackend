@@ -13,13 +13,13 @@ const isDev = process.env.NODE_ENV !== 'production';
 // create a rolling file logger based on date/time that fires process events
 const log = require('simple-node-logger');
 const logger_opts = {
-    errorEventName:'error',
-    logDirectory:'./logs', // NOTE: folder must exist and be writable...
-    fileNamePattern:'dtp-<DATE>.log',
-    dateFormat:'YYYY.MM.DD'
+    errorEventName: 'error',
+    logDirectory: './logs', // NOTE: folder must exist and be writable...
+    fileNamePattern: 'dtp-<DATE>.log',
+    dateFormat: 'YYYY.MM.DD'
 };
 const logger = log.createRollingFileLogger(logger_opts);
-logger.info('Server Running in DEV mode: ',isDev);
+logger.info('Server Running in DEV mode: ', isDev);
 
 
 app = express();
@@ -47,7 +47,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Set up mongoose connection
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
 
 let mongoDB = "";
 
@@ -57,7 +58,7 @@ if (isDev) {
     mongoDB = config.db;
 }
 
-logger.info('Connecting to MongoDB at ',mongoDB);
+logger.info('Connecting to MongoDB at ', mongoDB);
 
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 
