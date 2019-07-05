@@ -71,7 +71,7 @@ router.route('/')
             __v: false,
             _id: false
         };
-
+        console.log("root");
         // Pull hits from remote Mongo instance
         PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
             if (err) {
@@ -82,7 +82,7 @@ router.route('/')
 
                 // console.log(`Successfully retrieved EJS ${ph_recs}`)
                 // potholes = ph_recs;
-                // console.log(potholes);
+                console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
                     title: 'DTP Landing Page',
@@ -222,7 +222,29 @@ router.route('/')
         }
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
         logger.info('New Hit Received: ', req.body);
-        PotHoleHit.create(req.body).then(function (bump) {
+        let jsonhit = new PotHoleHitG(
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [req.body.longitude, req.body.latitude],
+
+                },
+                "type": "Feature",
+                "properties":
+                    {
+                        "date": req.body.date,
+                        "userTag": req.body.userTag,
+                        "marker": req.body.marker,
+                        "x": req.body.x,
+                        "y": req.body.y,
+                        "z": req.body.z,
+                        "lastx": req.body.lastx,
+                        "lasty": req.body.lasty,
+                        "lastz": req.body.lastz,
+                        "active": true
+                    }
+            });
+        PotHoleHitG.create(jsonhit).then(function (bump) {
             res.send(bump);
         })
     });

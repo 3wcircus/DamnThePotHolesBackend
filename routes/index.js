@@ -5,6 +5,7 @@ const Pot_Holes = require('../Models/PotHoleHit');
 /* GET landing page. */
 // FIXME: Deprecate this as now redirects to geoJSON page
 router.get('/', function (req, res, next) {
+    console.log("Hit root");
     // var dataFilter = {
     //     __v: false,
     //     _id: false
