@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 let geo = require('geolib');
 let ejs = require('ejs-locals');
 
@@ -19,14 +19,14 @@ const logger = log.createRollingFileLogger(logger_opts);
 
 function treatAsUTC(date) {
     logger.debug(arguments.callee.name);
-    var result = new Date(date);
+    const result = new Date(date);
     result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
     return result;
 }
 
 function daysBetween(startDate, endDate) {
     logger.debug(arguments.callee.name);
-    var millisecondsPerDay = 24 * 60 * 60 * 1000;
+    const millisecondsPerDay = 24 * 60 * 60 * 1000;
     return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
 }
 
@@ -64,10 +64,11 @@ function daysBetween(startDate, endDate) {
 // Base home page that displays all the maps and all the current hits
 router.route('/')
     .get(function (req, res) {
-        logger.info(arguments.callee.name);
+        // logger.info(arguments.callee.name);
+        logger.info(`Rendering Hit Map, ${arguments.callee.name}`);
         // Add a new source from our GeoJSON data and set the
         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
-        var dataFilter = {
+        const dataFilter = {
             __v: false,
             _id: false
         };
@@ -99,7 +100,7 @@ router.route('/')
 //         logger.info(arguments.callee.name);
 //         // Add a new source from our GeoJSON data and set the
 //         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
-//         // TODO:Figure out how not to exclude the dat field
+//         // Exclude fields added by Mongo
 //         var dataFilter = {
 //             __v: false,
 //             _id: false
@@ -121,49 +122,6 @@ router.route('/')
 //         res.send(ph_recs);
 //     });
 
-// FIXME: Update for geoJSON
-// router.route('/agetest')
-//     .get(function (req, res) {
-//         logger.debug(arguments.callee.name);
-//         let age = req.query.age;
-//         if (age) {
-//             console.log(age);
-//             age = parseInt(age);
-//         } else {
-//             age = -1;
-//         }
-//         PotHoleHit.find({}, {}, function (err, result) {
-//             if (err)
-//
-//                 res.send(err);
-//             else {
-//                 let newArray = result.filter(function (hit) {
-//                     if (age < 1) {
-//                         return true;
-//                     }
-//                     let dateToday = Date.now();
-//                     let dateVal = Date.parse(hit.date);
-//                     let dateDateVal = new Date(dateVal);
-//                     let dayDiff = daysBetween(dateDateVal, dateToday);
-//                     // console.log(dayDiff);
-//                     if (dayDiff >= age) {
-//                         console.log(dateDateVal.toDateString());
-//                         return true;
-//                     } else {
-//                         return false;
-//                     }
-//
-//
-//                 });
-//
-//
-//                 // Now my array is aged
-//                 res.send(newArray);
-//             }
-//
-//         })
-//
-//     });
 
 // FIXME: Update for geoJSON
 // router.route('/filtertest')
