@@ -71,11 +71,21 @@
             type: "circle",
             source: "potholes",
             filter: ["!", ["has", "point_count"]],
+            // FIXME Playing with colors. Clean this up
             paint: {
-                "circle-color": "#da1039",
-                "circle-radius": 4,
-                "circle-stroke-width": 1,
-                "circle-stroke-color": "#fff"
+                // "circle-color": "#da1039",
+                "circle-color": [
+                    'match',
+                    ['get', 'marker'],
+                    0, '#dc143c',
+                    60, '#ffd700',
+                    240, '#4169e1',
+                    /* other */ '#ccc'
+                ],
+                "circle-radius": 4
+                // ,
+                // "circle-stroke-width": .5,
+                // "circle-stroke-color": "#fff"
             }
         });
 

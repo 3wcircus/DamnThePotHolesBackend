@@ -30,36 +30,6 @@ function daysBetween(startDate, endDate) {
     return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
 }
 
-// proto group commons
-// FIXME: Update for geoJSON
-// router.route('/grouptest')
-//     .get(function (req, res) {
-//         logger.debug(arguments.callee.name);
-//         PotHoleHit.find({}, {}, function (err, result) {
-//             if (err)
-//
-//                 res.send(err);
-//             else {
-//                 let modArray = result.map(function (hit) {
-//                     return {
-//                         latitude: hit.lat,
-//                         longitude: hit.long
-//                     }
-//                 });
-//
-//                 // Rebuild an array from sorted collection
-//                 let newArray = geo.orderByDistance({latitude: 0, longitude: 0}, modArray).map(function (hit) {
-//                     return result[hit.key];
-//                 });
-//                 // Now my array is sorted
-//                 res.send(newArray);
-//
-//                 // Now iterate through and combine pts within 5 meters of each other
-//
-//             }
-//
-//         })
-//     });
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
@@ -94,81 +64,10 @@ router.route('/')
 
     });
 
-// FIXME: This iwas just for debug
-// router.route('/ejsdata')
-//     .get(function (req, res) {
-//         logger.info(arguments.callee.name);
-//         // Add a new source from our GeoJSON data and set the
-//         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
-//         // Exclude fields added by Mongo
-//         var dataFilter = {
-//             __v: false,
-//             _id: false
-//         };
-//
-//         // Pull hits from remote Mongo instance
-//         let ph_recs = null;
-//         PotHoleHit.find({}, dataFilter, function (err, ph_recs) { //Use the find method on the data model to search DB
-//             if (err) {
-//                 console.log("Error getting hit records: \n" + ph_recs);
-//                 res.send(err);
-//             } else {
-//                 // No exception, so inject hits and render
-//
-//                 // console.log(`Successfully retrieved EJS ${ph_recs}`)
-//             }
-//         });
-//         // console.log(ph_recs);
-//         res.send(ph_recs);
-//     });
 
 
-// FIXME: Update for geoJSON
-// router.route('/filtertest')
-//     .get(function (req, res) {
-//         logger.debug(arguments.callee.name);
-//         let age = req.query.age;
-//         if (age) {
-//             console.log(age);
-//             age = parseInt(age);
-//         } else {
-//             age = -1;
-//         }
-//         PotHoleHit.find({}, {}, function (err, result) {
-//             if (err)
-//
-//                 res.send(err);
-//             else {
-//                 let newArray = result.filter(function (hit) {
-//                     if (age < 1) {
-//                         return true;
-//                     }
-//                     let dateToday = Date.now();
-//                     let dateVal = Date.parse(hit.date);
-//                     let dateDateVal = new Date(dateVal);
-//                     let dayDiff = daysBetween(dateDateVal, dateToday);
-//                     // console.log(dayDiff);
-//                     if (dayDiff <= age) {
-//                         console.log(dateDateVal.toDateString());
-//                         return true;
-//                     } else {
-//                         return false;
-//                     }
-//
-//
-//                 });
-//
-//
-//                 // Now my array is aged
-//                 res.send(newArray);
-//             }
-//
-//         })
-//
-//     });
 
 // Posts a new hit
-// FIXME: Update for geoJSON
 router.route('/')
     .post(function (req, res) {
         logger.debug(arguments.callee.name);
@@ -180,6 +79,7 @@ router.route('/')
         }
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
         logger.info('New Hit Received: ', req.body);
+        // FIXME Should be able to generate all this from object. This is to hard-coded
         let jsonhit = new PotHoleHitG(
             {
                 "geometry": {

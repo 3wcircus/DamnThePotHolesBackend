@@ -1,6 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const PotHoleHitG = require('../Models/PotHoleHitGEO');
+// create a rolling file logger based on date/time that fires process events
+const express = require('express'), router = express.Router(), PotHoleHitG = require('../Models/PotHoleHitGEO'),
+    log = require('simple-node-logger'), logger_opts = {
+        errorEventName: 'error',
+        logDirectory: './logs', // NOTE: folder must exist and be writable...
+        fileNamePattern: 'dtp-<DATE>.log',
+        dateFormat: 'YYYY.MM.DD'
+    }, logger = log.createRollingFileLogger(logger_opts);
 
 function treatAsUTC(date) {
     logger.debug(arguments.callee.name);
@@ -39,7 +44,7 @@ router.route('/agetest')
                     let dateDateVal = new Date(dateVal);
                     let dayDiff = daysBetween(dateDateVal, dateToday);
                     // console.log(dayDiff);
-                    if (dayDiff >= age) {
+                    if (dayDiff <= age) {
                         console.log(dateDateVal.toDateString());
                         return true;
                     } else {
