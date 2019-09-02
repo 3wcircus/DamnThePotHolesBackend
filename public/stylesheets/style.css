@@ -7,6 +7,15 @@ a {
   color: #00B7FF;
 }
 
+.mapboxgl-popup {
+  max-width: 400px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-popup-content {
+  color: #000000;
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 /*.nav*/
 /*{*/
 /*  display:flex;*/
