@@ -8,28 +8,14 @@ const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const log = require('simple-node-logger');
 
 
-// create a rolling file logger based on date/time that fires process events
+// Create a rolling file logger based on date/time that fires process events
 const logger_opts = {
     errorEventName: 'error',
     logDirectory: './logs', // NOTE: folder must exist and be writable...
     fileNamePattern: 'dtp-<DATE>.log',
     dateFormat: 'YYYY.MM.DD'
 };
-const logger = log.createRollingFileLogger(logger_opts);
-
-function treatAsUTC(date) {
-    logger.debug(arguments.callee.name);
-    const result = new Date(date);
-    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
-    return result;
-}
-
-function daysBetween(startDate, endDate) {
-    logger.debug(arguments.callee.name);
-    const millisecondsPerDay = 24 * 60 * 60 * 1000;
-    return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
-}
-
+const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
@@ -49,10 +35,6 @@ router.route('/')
                 console.log("Error getting hit records: \n" + potholes);
                 res.send(err);
             } else {
-                // No exception, so inject hits and render
-
-                // console.log(`Successfully retrieved EJS ${ph_recs}`)
-                // potholes = ph_recs;
                 console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
@@ -61,10 +43,7 @@ router.route('/')
                 });
             }
         });
-
     });
-
-
 
 
 // Posts a new hit
@@ -155,6 +134,7 @@ router.route('/')
 // Routes for app controlers
 router.route('/')
     .get(function (req, res) {
+        console.log(`Rendering Hit Map, ${arguments.callee.name}`);
         res.send('Get a Job')
     });
 
