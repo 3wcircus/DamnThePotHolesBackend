@@ -12,16 +12,17 @@
         zoom: 9
     });
 
-    map.on('load', function() {
-        console.log("Head "+  '<%= title %>');
+    map.on('load', function () {
+        console.log("Head " + '<%= title %>');
         map.addSource("potholes", {
             type: "geojson",
-            data:   {"type":"FeatureCollection","features": [<%- pot_holes %>]},
+            data: {"type": "FeatureCollection", "features": [<%- pot_holes %>]},
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
         });
 
+        // Add highest level grouping (red)
         map.addLayer({
             id: "clusters",
             type: "circle",
@@ -33,56 +34,75 @@
                 //   * Blue, 20px circles when point count is less than 100
                 //   * Yellow, 30px circles when point count is between 100 and 750
                 //   * Pink, 40px circles when point count is greater than or equal to 750
+                // TODO: Implement additional steps
                 "circle-color": [
                     "step",
                     ["get", "point_count"],
                     "#51bbd6",
-                    50,
-                    "#f1f075",
                     100,
+                    "#f1f075",
+                    500,
                     "#f28cb1"
                 ],
+                // 'circle-radius': [{
+                //     'base': 1.75,
+                //     'stops': [[12, 2], [22, 180]]
+                // }
+                // FIXME: Old version that works
                 "circle-radius": [
                     "step",
                     ["get", "point_count"],
                     20,
                     100,
                     30,
-                    750,
+                    500,
                     40
                 ]
             }
         });
 
+        //
+        // TODO: Fix Blue circle scale
         map.addLayer({
             id: "cluster-count",
             type: "symbol",
             source: "potholes",
             filter: ["has", "point_count"],
             layout: {
-                "text-field": "{point_count_abbreviated}",
+                "text-field": "{point_count_abbreviated}", // The count of hits in the group circle
                 "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-                "text-size": 12
+                "text-size": 12 // Text font for all numbers on cluster circles
             }
         });
 
+        // The individual hit icon
         map.addLayer({
             id: "unclustered-point",
             type: "circle",
             source: "potholes",
             filter: ["!", ["has", "point_count"]],
+            // FIXME Playing with colors. Clean this up
             paint: {
-                "circle-color": "#da1039",
-                "circle-radius": 4,
-                "circle-stroke-width": 1,
-                "circle-stroke-color": "#fff"
+                // "circle-color": "#da1039",
+                "circle-color": [
+                    'match',
+                    ['get', 'marker'],
+                    0, '#dc143c',
+                    60, '#ffd700',
+                    240, '#4169e1',
+                    /* other */ '#ccc'
+                ],
+                "circle-radius": 6
+                // ,
+                // "circle-stroke-width": .5,
+                // "circle-stroke-color": "#fff"
             }
         });
 
         // inspect a cluster on click
         map.on('click', 'clusters', function (e) {
-            var features = map.queryRenderedFeatures(e.point, {layers: ['clusters']});
-            var clusterId = features[0].properties.cluster_id;
+            const features = map.queryRenderedFeatures(e.point, {layers: ['clusters']});
+            const clusterId = features[0].properties.cluster_id;
             map.getSource('potholes').getClusterExpansionZoom(clusterId, function (err, zoom) {
                 if (err)
                     return;
@@ -93,14 +113,63 @@
                 });
             });
         });
-
-        map.on('mouseenter', 'clusters', function () {
-            map.getCanvas().style.cursor = 'pointer';
+        // Create a popup, but don't add it to the map yet.
+        let popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
         });
-        map.on('mouseleave', 'clusters', function () {
+        // map.on('mouseenter', 'clusters', function () {
+        //     map.getCanvas().style.cursor = 'pointer';
+        // });
+        // map.on('mouseleave', 'clusters', function () {
+        //     map.getCanvas().style.cursor = '';
+        // });
+        map.on('mouseenter', 'unclustered-point', function (e) {
+// Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+
+            console.log(`
+            Feature 0:
+            ${e.features[0].properties.date}
+            ${e.features[0].geometry.coordinates.slice()}
+            `)
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.date;
+            const user = e.features[0].properties.userTag;
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+// Populate the popup and set its coordinates
+// based on the feature found.
+//
+            popup.setLngLat(coordinates)
+                .setText(
+                    `${description}
+                     ${coordinates}
+                     ${e.features[0].properties.x} ${e.features[0].properties.y} ${e.features[0].properties.z}
+                     ${e.features[0].properties.lastx} ${e.features[0].properties.lasty} ${e.features[0].properties.lastz}
+                     ${user}
+                `)
+                .addTo(map);
+
+//             popup.addTo(map);
+//             popup.text = description;
+//             popup.addTo(map);
+        });
+
+        map.on('mouseleave', 'unclustered-point', function () {
             map.getCanvas().style.cursor = '';
+            popup.remove();
         });
         map.resize();
     });
+
+
+
+
 </script>
 

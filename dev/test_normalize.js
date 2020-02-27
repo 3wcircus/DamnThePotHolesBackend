@@ -1,9 +1,11 @@
 let geo = require('geolib');
 const fs = require('fs');
-const PotHoleHit = require('../Models/PotHoleHit');
+const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const config = require('../config/config');
 //Set up mongoose connection
 let mongoose = require('mongoose');
+
+
 
 function treatAsUTC(date) {
     var result = new Date(date);
@@ -21,8 +23,10 @@ function readTextFile(file) {
     return (JSON.parse(rawtext));
 }
 
+// TODO Fix sort alogorithm for geoJSON
 function sort_hits2(modArray) {
     // Rebuild an array from sorted collection
+    // todo: change for geeJSON
     let newArray = geo.orderByDistance({latitude: 0, longitude: 0}, modArray).map(function (hit) {
         return modArray[hit.key];
     });
@@ -32,17 +36,20 @@ function sort_hits2(modArray) {
 
 function sort_hits(hitlist) {
     let modArray = hitlist.map(function (hit) {
-        return {
-            latitude: hit.latitude,
-            longitude: hit.longitude
-        }
+        return ({latitude: hit.geometry.coordinates[0], longitude: hit.geometry.coordinates[1]});
+        // return {
+        //     latitude: hit.geometry.coordinates[0],
+        //     longitude: hit.geometry.coordinates[1]
+        // }
     });
-
+    // console.log(modArray);
     // Rebuild an array from sorted collection
-    let newArray = geo.orderByDistance({latitude: 0, longitude: 0}, modArray).map(function (hit) {
-        return hitlist[hit.key];
+    let newArray = geo.orderByDistance({latitude: 0, longitude: 0}, modArray).map(function (hit, ndx) {
+        // console.log(ndx);
+        return hitlist[ndx];
     });
     // Now my array is sorted
+    // console.log(newArray);
     return (newArray);
 }
 
@@ -55,17 +62,31 @@ function normalize_near_hits(nearby_hits) {
     // Sort by date
     // console.log(`Unsorted list ${JSON.stringify(nearby_hits)}`);
     nearby_hits.sort((a, b) => {
+        // todo: change for geeJSON
         let dateVal1 = Date.parse(a.date);
         let dateVal2 = Date.parse(b.date);
         return daysBetween(dateVal1, dateVal2);
     });
+
+    // sort by severity
+    // todo: change for geeJSON
+    nearby_hits.sort((a, b) => {
+        return (a.marker - b.marker);
+    });
     // console.log(`Sorted list ${JSON.stringify(nearby_hits)}`);
+
+    // fixme Don't assume first one what you want
     normalized_hit = nearby_hits[0];
     // Now get center
-    let center_hit = geo.getCenterOfBounds(nearby_hits);
+
+//    let center_hit = geo.getCenterOfBounds(nearby_hits);
+    let center_hit = geo.getCenterOfBounds(nearby_hits.map(function (hit, ndx) {
+        return ({latitude: hit.geometry.coordinates[0], longitude: hit.geometry.coordinates[1]});
+    }));
     console.log(`Center of ${nearby_hits.length} hits is ${JSON.stringify(center_hit)}`);
-    normalized_hit.longitude = center_hit.longitude;
-    normalized_hit.latitude = center_hit.latitude;
+    // todo: change for geeJSON
+    normalized_hit.geometry.coordinates[1] = center_hit.longitude;
+    normalized_hit.geometry.coordinates[0] = center_hit.latitude;
     return normalized_hit;
 }
 
@@ -75,7 +96,9 @@ function merge_hits(hitlist, diameter) {
     let nearby_hits = [];
 
     // let hitlist_sorted = sort_hits2(hitlist);
-    let modArray = sort_hits2(hitlist);
+    // let modArray = sort_hits2(hitlist);
+    let modArray = sort_hits(hitlist); // for geojson
+    console.log(modArray);
     // let modArray = hitlist_sorted.map(function (hit) {
     //     return {
     //         latitude: hit.lat,
@@ -88,14 +111,26 @@ function merge_hits(hitlist, diameter) {
     console.log("*************************************");
     modArray.forEach(function (element) {
             if (nearby_hits.length === 0) {
+                console.log(`Pushing empty ${element}`);
                 nearby_hits.push(element);
                 // console.log(`NOTHING IN NEARBY HITS. ${JSON.stringify(element)}`);
             } else {
                 let in_range = true;
                 for (let i = 0; i < nearby_hits.length; i++) {
-                    let hit_distance = geo.getDistance(nearby_hits[i], element);
+                    // todo: change for geeJSON
+
+                    let hit_distance = geo.getDistance({
+                            latitude: nearby_hits[i].geometry.coordinates[0], longitude:
+                                nearby_hits[i].geometry.coordinates[1]
+                        }
+                        ,
+                        {
+                            latitude: element.geometry.coordinates[0], longitude:
+                                element.geometry.coordinates[1]
+                        });
+                    // let hit_distance = geo.getDistance(nearby_hits[i], element);
                     if (hit_distance > diameter) {
-                        // console.log(`Point out of range at ${hit_distance} meters. ${JSON.stringify(nearby_hits[i])} ${JSON.stringify(element)}`);
+                         // console.log(`Point out of range at ${hit_distance} meters. ${JSON.stringify(nearby_hits[i])} ${JSON.stringify(element)}`);
                         in_range = false;
                         break;
                     }
@@ -131,18 +166,60 @@ function merge_hits(hitlist, diameter) {
         let center_hit = normalize_near_hits(nearby_hits);
         merged_hits.push(center_hit);
     }
+    console.log(`Original number of hits is ${modArray.length}`);
     console.log(`Merged number of hits is ${merged_hits.length}`);
     return merged_hits;
 }
 
 
-let json_hits = readTextFile('./testdata.json');
+// let json_hits = readTextFile('./dtpgeojson.json');
+// console.log(sort_hits(json_hits.features));
+
+// let json_hits = readTextFile('./testdata.json');
 // console.log(json_hits);
 // console.log("*************************************");
 
 // let hit_list = sort_hits2(json_hits);
 
-let hit_list = merge_hits(json_hits, 20);
+let mongoDB = config.db;
+console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
+mongoose.connect(mongoDB, {useNewUrlParser: true})
+    .then(() => {
+        console.log(`connect to MongoDB at ${mongoDB} successful`);
+    })
+    .catch((err) => {
+        console.log(`connect to MongoDB at ${mongoDB} FAILED!${err.stack}`);
+        process.exit(1);
+    });
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// Read hits from db
+
+
+
+// Merge hits
+console.log(merge_hits(json_hits.features, 20));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 // // Try to build a list with complete data
 // let hit_list = merged_json_hits.map(function (hit) {

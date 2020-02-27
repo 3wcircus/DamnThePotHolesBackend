@@ -8,6 +8,8 @@ cookieParser = require('cookie-parser');
 indexRouter = require('./routes/index');
 usersRouter = require('./routes/users');
 potholeRoutes = require('./routes/damnThePotholes');
+apiRouter = require('./routes/api');
+
 const config = require('./config/config');
 const isDev = process.env.NODE_ENV !== 'production';
 // create a rolling file logger based on date/time that fires process events
@@ -68,6 +70,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dtp', potholeRoutes);
+app.use('/api',apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

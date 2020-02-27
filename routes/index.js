@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-const Pot_Holes = require('../Models/PotHoleHit');
+const express = require('express');
+const router = express.Router();
+// const Pot_Holes = require('../Models/PotHoleHit');
 
 /* GET landing page. */
 // FIXME: Deprecate this as now redirects to geoJSON page
