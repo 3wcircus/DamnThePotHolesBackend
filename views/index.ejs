@@ -123,12 +123,7 @@
             closeButton: false,
             closeOnClick: false
         });
-        // map.on('mouseenter', 'clusters', function () {
-        //     map.getCanvas().style.cursor = 'pointer';
-        // });
-        // map.on('mouseleave', 'clusters', function () {
-        //     map.getCanvas().style.cursor = '';
-        // });
+
         map.on('mouseenter', 'unclustered-point', function (e)
         {
 // Change the cursor style as a UI indicator.
@@ -162,10 +157,6 @@
                      ${user}
                 `)
                 .addTo(map);
-
-//             popup.addTo(map);
-//             popup.text = description;
-//             popup.addTo(map);
         });
 
         map.on('mouseleave', 'unclustered-point', function ()
@@ -175,7 +166,6 @@
         });
         map.resize();
     });
-
 
 </script>
 

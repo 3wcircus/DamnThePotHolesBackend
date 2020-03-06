@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
     //         console.log(`Successfully Google retrieved ${ph_recs}`)
     //         res.render('google_maps', {
     //             pot_holes: ph_recs,
-    //             google_map_api_key: 'AIzaSyAcQjbN0Wx4DzaqxJTiyOl5ZgaCvGQk4yI'
+    //             google_map_api_key: 'not-my key'
     //         })
     //     }
     // });
