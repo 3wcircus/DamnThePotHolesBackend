@@ -12,7 +12,8 @@
         zoom: 9
     });
 
-    map.on('load', function () {
+    map.on('load', function ()
+    {
         console.log("Head " + '<%= title %>');
         map.addSource("potholes", {
             type: "geojson",
@@ -100,12 +101,16 @@
         });
 
         // inspect a cluster on click
-        map.on('click', 'clusters', function (e) {
+        map.on('click', 'clusters', function (e)
+        {
             const features = map.queryRenderedFeatures(e.point, {layers: ['clusters']});
             const clusterId = features[0].properties.cluster_id;
-            map.getSource('potholes').getClusterExpansionZoom(clusterId, function (err, zoom) {
+            map.getSource('potholes').getClusterExpansionZoom(clusterId, function (err, zoom)
+            {
                 if (err)
+                {
                     return;
+                }
 
                 map.easeTo({
                     center: features[0].geometry.coordinates,
@@ -124,7 +129,8 @@
         // map.on('mouseleave', 'clusters', function () {
         //     map.getCanvas().style.cursor = '';
         // });
-        map.on('mouseenter', 'unclustered-point', function (e) {
+        map.on('mouseenter', 'unclustered-point', function (e)
+        {
 // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
 
@@ -139,7 +145,8 @@
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
 // over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180)
+            {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
 
@@ -161,14 +168,13 @@
 //             popup.addTo(map);
         });
 
-        map.on('mouseleave', 'unclustered-point', function () {
+        map.on('mouseleave', 'unclustered-point', function ()
+        {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
         map.resize();
     });
-
-
 
 
 </script>

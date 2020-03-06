@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-let geo = require('geolib');
-let ejs = require('ejs-locals');
+// let geo = require('geolib');
+// let ejs = require('ejs-locals');
 
 const PotHoleHitG = require('../Models/PotHoleHitGEO');
 
@@ -19,7 +19,8 @@ const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
-    .get(function (req, res) {
+    .get(function (req, res)
+    {
         // logger.info(arguments.callee.name);
         logger.info(`Rendering Hit Map, ${arguments.callee.name}`);
         // Add a new source from our GeoJSON data and set the

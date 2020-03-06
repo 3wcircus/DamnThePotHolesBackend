@@ -1,10 +1,12 @@
+/*******************************************************
+ *  POINT OF ENTRY
+ *******************************************************/
 let createError, express, path, cookieParser, indexRouter, usersRouter, potholeRoutes, seedRouter, app;
-// import 'bootstrap';
+
 createError = require('http-errors');
 express = require('express');
 path = require('path');
 cookieParser = require('cookie-parser');
-// logger = require('morgan');
 indexRouter = require('./routes/index');
 usersRouter = require('./routes/users');
 potholeRoutes = require('./routes/damnThePotholes');
@@ -23,7 +25,7 @@ const logger_opts = {
 const logger = log.createRollingFileLogger(logger_opts);
 logger.info('Server Running in DEV mode: ', isDev);
 
-
+// Get reference for Express
 app = express();
 
 // Bootstrap
@@ -33,52 +35,57 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
 app.engine('ejs', require('ejs-locals'));
-// app.set('views', __dirname + '/templates');
 app.set('view engine', 'ejs');
 
 
-// app.set('view engine', 'pug');
+// app.set('view engine', 'pug'); // Replaced PUG with EJS
 
-// app.use(logger('dev'));
+// Use these
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//Set up mongoose connection
+/*
+    SETUP OR DB CNXN
+ */
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 
 let mongoDB = "";
-
-if (isDev) {
+if (isDev)
+{
     mongoDB = config.db_dev;
-} else {
+}
+else
+{
     mongoDB = config.db;
 }
-
 logger.info('Connecting to MongoDB at ', mongoDB);
-
 mongoose.connect(mongoDB, {useNewUrlParser: true});
-
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+/*
+    SETUP ALL OUR ROUTES
+ */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dtp', potholeRoutes);
-app.use('/api',apiRouter);
+app.use('/api', apiRouter);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
+// catch 404 and forward to error handler (that does basically nothing atm)
+app.use(function (req, res, next)
+{
     next(createError(404));
 });
 
-// error handler
-app.use(function (err, req, res, next) {
+// Generic error handler
+// TODO: Implement some real exception handling
+app.use(function (err, req, res, next)
+{
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -88,4 +95,5 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
+// Export a reference
 module.exports = app;
