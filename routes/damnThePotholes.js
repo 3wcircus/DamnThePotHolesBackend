@@ -54,7 +54,8 @@ router.route('/')
     });
 
 
-// Posts a new hit
+// Posts a new hit received from an external device
+// ATM the Android app
 router.route('/')
     .post(function (req, res)
     {
