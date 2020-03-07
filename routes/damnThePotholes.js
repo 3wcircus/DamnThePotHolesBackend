@@ -46,7 +46,7 @@ router.route('/')
                 console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
-                    title: 'DTP Landing Page',
+                    title: 'DTP',
                     pot_holes: potholes
                 });
             }
