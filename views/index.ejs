@@ -5,13 +5,13 @@
 
 <!--The entire content of this section comes from MapBox javascript-->
 <!--TODO: Can I pull this out into separate file?-->
-
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoia3lhbmN5IiwiYSI6ImNqeDRuaGI2ZDBiank0NGtqZTRrb2VoaGQifQ.j1Ap9ucUmQy0_7FGOh8fVA';
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
-        // style: 'mapbox://styles/mapbox/streets-v11',
+        // TODO: Make it so we can flip between styles on the fly
+        // style: 'mapbox://styles/mapbox/dark-v10',
+        style: 'mapbox://styles/mapbox/streets-v11',
         center: [-89.9517577, 35.1480818], // FIXME: starting position should be based on user/browser location
         zoom: 9
     });
