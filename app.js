@@ -11,6 +11,8 @@ indexRouter = require('./routes/index');
 usersRouter = require('./routes/users');
 potholeRoutes = require('./routes/damnThePotholes');
 apiRouter = require('./routes/api');
+aboutmeRouter = require('./routes/aboutme')
+contactRouter = require('./routes/contact')
 
 const config = require('./config/config');
 const isDev = process.env.NODE_ENV !== 'production'; // Determine if running in dev environment or production
@@ -75,6 +77,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dtp', potholeRoutes);
 app.use('/api', apiRouter);
+app.use('/aboutme', aboutmeRouter)
+app.use('/contact', contactRouter)
 
 // catch 404 and forward to error handler (that does basically nothing atm)
 app.use(function (req, res, next)
