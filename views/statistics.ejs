@@ -1,0 +1,37 @@
+<!--Statistics on Percentage of Cases Closed out of Open Over Time Period-->
+<% layout('layout') -%>
+<h1\>
+    Percentage of Potholes Fixed out of Total Open Repair Tickets
+</h1>
+<!-- element with id attribute, reference to it in javascript, . enter html =  -->
+
+<p id="closedP"></p> 
+
+<script>
+
+
+    $.getJSON('https://data.memphistn.gov/resource/2244-gnrp.json?category=Maintenance-Potholes', function(data) {
+    var closedPotholes = JSON.parse(data);    
+    });
+
+    var nClosedPotholes = closedPotholes.length;
+
+    document.getElementById("closedP").innerHTML = nClosedPotholes;
+
+</script>
+
+
+
+
+
+
+
+
+/*
+    var url_string = "https://data.memphistn.gov/resource/2244-gnrp.json?category=Maintenance-Potholes";
+    closedPotholes = new URL(url_string);
+    options = url.searchParams.getAll("options[]");
+    var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+    console.log(options);
+*/

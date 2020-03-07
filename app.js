@@ -13,6 +13,7 @@ potholeRoutes = require('./routes/damnThePotholes');
 apiRouter = require('./routes/api');
 aboutmeRouter = require('./routes/aboutme')
 contactRouter = require('./routes/contact')
+statisticsRouter = require('./routes/statistics');
 
 const config = require('./config/config');
 const isDev = process.env.NODE_ENV !== 'production'; // Determine if running in dev environment or production
