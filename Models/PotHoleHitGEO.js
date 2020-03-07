@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // This schema describes the model for a pothole hit reported by a collector
+// FIXME: Date would be better as a Date data type but is that valid with geoJSON?
 
 var PotHoleHitsGEOSchema = new Schema({
     type: {type: String},

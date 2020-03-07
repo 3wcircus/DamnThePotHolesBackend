@@ -1,13 +1,16 @@
+/*************************************************************
+ * This is the main set of routes for the whole shebang
+ *
+ * FIXME: the routes for recording a new hit (and possible others) should be moved to the api.js routes
+ *
+ * @type {createApplication}
+ */
 const express = require('express');
 const router = express.Router();
-let geo = require('geolib');
-let ejs = require('ejs-locals');
-
 const PotHoleHitG = require('../Models/PotHoleHitGEO');
-
 const log = require('simple-node-logger');
 
-
+// FIXME: This code for creating a log file is duplicated in each Route javascript and should not be
 // Create a rolling file logger based on date/time that fires process events
 const logger_opts = {
     errorEventName: 'error',
@@ -19,7 +22,8 @@ const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
-    .get(function (req, res) {
+    .get(function (req, res)
+    {
         // logger.info(arguments.callee.name);
         logger.info(`Rendering Hit Map, ${arguments.callee.name}`);
         // Add a new source from our GeoJSON data and set the
@@ -30,11 +34,15 @@ router.route('/')
         };
         console.log("root");
         // Pull hits from remote Mongo instance
-        PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
-            if (err) {
+        PotHoleHitG.find({}, dataFilter, function (err, potholes)
+        { //Use the find method on the data model to search DB
+            if (err)
+            {
                 console.log("Error getting hit records: \n" + potholes);
                 res.send(err);
-            } else {
+            }
+            else
+            {
                 console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
@@ -46,11 +54,14 @@ router.route('/')
     });
 
 
-// Posts a new hit
+// Posts a new hit received from an external device
+// ATM the Android app
 router.route('/')
-    .post(function (req, res) {
+    .post(function (req, res)
+    {
         logger.debug(arguments.callee.name);
-        if (!req.body) {
+        if (!req.body)
+        {
             // FIXME: why does just trying to log to console render a template? And here it will case an exception
             logger.warn('No Request Body in Hit POST');
             res.send({});
@@ -81,7 +92,8 @@ router.route('/')
                         "active": true
                     }
             });
-        PotHoleHitG.create(jsonhit).then(function (bump) {
+        PotHoleHitG.create(jsonhit).then(function (bump)
+        {
             res.send(bump);
         })
     });
@@ -133,7 +145,8 @@ router.route('/')
 
 // Routes for app controlers
 router.route('/')
-    .get(function (req, res) {
+    .get(function (req, res)
+    {
         console.log(`Rendering Hit Map, ${arguments.callee.name}`);
         res.send('Get a Job')
     });

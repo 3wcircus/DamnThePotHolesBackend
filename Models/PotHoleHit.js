@@ -1,3 +1,8 @@
+/******************************************
+ * FIXME: NOTE this is the old model prior to using geoJSON and needs to be removed when deemed safe
+ *
+ * @type {module:mongoose}
+ */
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

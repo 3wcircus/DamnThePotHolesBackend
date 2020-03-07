@@ -1,108 +1,67 @@
 <!DOCTYPE html>
-<html>
-<!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
-<!--FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
-<head>
-    <meta charset='utf-8'/>
-    <!--    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>-->
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
-<!--    <link href='/stylesheets/css/bootstrap.css' rel='stylesheet'/>-->
-    <link href='/stylesheets/style.css' rel='stylesheet'/>
-    <link href='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css' rel='stylesheet'>
-    <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js'></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #ee8a65;
-        }
+    <!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
+    <!--FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
+    <head>
+        <title><%= title %></title>
+        <meta charset='utf-8'/>
+        <!--    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>-->
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
+        <!--    <link href='/stylesheets/css/bootstrap.css' rel='stylesheet'/>-->
+        <link href='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css' rel='stylesheet'>
+        <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js'></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link href='/stylesheets/style.css' rel='stylesheet'/>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/main.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4351854-3"></script>
+        <script>
 
-        #map {
-            /*position: absolute;*/
-            /*top: 60px;*/
-            /*bottom: 0;*/
-            /*width: 49%;*/
-            /*height: 100%;*/
-            display: block;
-            position: relative;
-            margin: 0px auto;
-            width: 100%;
-            height: 800px;
-            /*padding: 10px;*/
-            border: 2px;
-            border-radius: 3px;
-            font-size: 12px;
-            /*text-align: center;*/
-            color: #fff;
-            /*background: #ee8a65;*/
-            border-radius: 25px;
-            border: 2px solid #73AD21;
-        }
+            function gtag()
+            {
+                dataLayer.push(arguments);
+            }
 
-        .container {
-            display: grid;
-            grid-template-columns: 100%;
-            /*
-            grid-column-gap:1em;
-            grid-row-gap:1em;
-            */
-            grid-gap: 1em;
-        }
-        .rcorners2 {
-            border-radius: 25px;
-            border: 2px solid #73AD21;
-            padding: 20px;
-            margin-top: 20px;
-            /*width: 200px;*/
-            /*height: 150px;*/
-        }
-    </style>
-    <script type="application/javascript">
-        function displayMsg(msg) {
-            alert(msg);
-        }
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4351854-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            gtag('js', new Date());
 
-        gtag('config', 'UA-4351854-3');
-    </script>
-</head>
+            gtag('config', 'UA-4351854-3');
+        </script>
+    </head>
 
-<body>
-<section class="container">
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark rcorners2"><a class="navbar-brand" href="#"><%= title %></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-            <div
-                    class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">About</a></li>
-                </ul>
-                <ul class="navbar-nav float-right">
-                    <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">Login</a></li>
-                </ul>
+
+    <body>
+        <section class="container">
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark rcorners2"><a class="navbar-brand"
+                                                                                      href="#"><%= title %></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                                class="navbar-toggler-icon"></span></button>
+                    <div
+                            class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">About</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav float-right">
+                            <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </div>
 
-    <%- body -%>
+            <%- body -%>
 
-</section>
+        </section>
 
-</body>
+    </body>
 
 </html>
