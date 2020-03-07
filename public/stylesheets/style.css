@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #ee8a65;
+    background:#6DAEDB;
 }
 
 #map {
@@ -23,7 +23,7 @@ body {
     color: #fff;
     /*background: #ee8a65;*/
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #00478F;
 }
 
 
@@ -35,13 +35,13 @@ body {
 
 .rcorners2 {
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #00478f;
     padding: 20px;
     margin-top: 20px;
 }
 
 a {
-    color: #00B7FF;
+    color: #2892D7;
 }
 
 .mapboxgl-popup {
