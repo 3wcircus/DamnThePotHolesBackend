@@ -41,7 +41,7 @@ router.route('/')
             else {
                 console.log(potholes);
                 // let ph = JSON.parse(potholes);
-                res.render('open', {
+                res.render('openMap', {
                     title: 'Open Map',
                     pot_holes: potholes
                 });
