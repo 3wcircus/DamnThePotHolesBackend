@@ -27,7 +27,7 @@ logger.info('Server Running in DEV mode: ', isDev);
 
 // Get reference for Express
 app = express();
-
+//New comment
 // Bootstrap
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
