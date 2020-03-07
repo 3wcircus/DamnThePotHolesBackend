@@ -1,4 +1,14 @@
-// create a rolling file logger based on date/time that fires process events
+/***************************************************
+ * This file is meant to separate all the routes for backend operations
+ * like recording a hit sent in from a mobile device
+ *
+ * FIXME: Migrate other routes from damnThePotholes to here
+ *
+ * @type {createApplication}
+ */
+
+
+// Create a rolling file logger based on date/time that fires process events
 const express = require('express'), router = express.Router(), PotHoleHitG = require('../Models/PotHoleHitGEO'),
     log = require('simple-node-logger'), logger_opts = {
         errorEventName: 'error',
@@ -7,6 +17,8 @@ const express = require('express'), router = express.Router(), PotHoleHitG = req
         dateFormat: 'YYYY.MM.DD'
     }, logger = log.createRollingFileLogger(logger_opts);
 
+// TODO: Move all helper functions to their own file
+// Helper function used in aging of hits
 function treatAsUTC(date)
 {
     logger.debug(arguments.callee.name);
@@ -15,6 +27,7 @@ function treatAsUTC(date)
     return result;
 }
 
+// Helper function to calculate difference between days
 function daysBetween(startDate, endDate)
 {
     logger.debug(arguments.callee.name);
@@ -22,7 +35,10 @@ function daysBetween(startDate, endDate)
     return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
 }
 
-// Landing API page
+/*
+    TODO: Legacy landing route as now should redirect to /dtp. See index.js route
+ */
+
 router.route('/')
     .get(function (req, res)
     {
@@ -32,7 +48,12 @@ router.route('/')
     });
 
 
-// FIXME: Update for geoJSON
+/*
+    This route accepts an extra parameter that is how many days to go back for hits.
+    This route is IMPORTANT as it should let us filter hit results by age in days
+    TODO: This route needs more testing to confirm it works
+    TODO: If this tests out, rename and move to other route file
+ */
 router.route('/agetest/:age')
     .get(function (req, res)
     {
@@ -49,14 +70,18 @@ router.route('/agetest/:age')
             age = -1;
         }
         PotHoleHitG.find({}, {}, function (err, result)
-        { // FIXME: Should filter on database lookup, not after
+        {
+            /*
+                FIXME: Should filter on database lookup, not after.
+                Right now gets all from database then filters down. This won't be acceptable should hit records reach severl thousand.
+             */
             if (err)
             {
                 res.send(err);
             }
             else
             {
-                let newArray = result.filter(function (hit)
+                let newArray = result.filter(function (hit) // Super Kludge
                 { // Filter on age days compared to current date/time
                     if (age < 1)
                     {
@@ -81,7 +106,7 @@ router.route('/agetest/:age')
                 });
 
 
-                // Now my array is aged
+                // Now my array is aged and only hits that matched range included
                 res.send(newArray);
             }
 

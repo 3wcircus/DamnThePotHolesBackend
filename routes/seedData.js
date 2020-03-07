@@ -1,5 +1,5 @@
 const PotHoleHit = require('../models/PotHoleHit');
-
+// FIXME: This needs to be converted to generated test records in geoJSON
 module.exports = function (app) {
     console.log("*** CREATING SEED DATA ***");
     app.get('/seeddata', function (req, res) {

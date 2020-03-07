@@ -203,7 +203,11 @@ function merge_hits(hitlist, diameter)
 // console.log("*************************************");
 
 // let hit_list = sort_hits2(json_hits);
-
+/**********************************************************
+ * TEST NORMALIZATION POINT OF ENTRY
+ *
+ * @type {string}
+ */
 let mongoDB = config.db;
 console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
 mongoose.connect(mongoDB, {useNewUrlParser: true})

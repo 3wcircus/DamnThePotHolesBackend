@@ -1,5 +1,5 @@
 /*******************************************************
- *  POINT OF ENTRY
+ *  POINT OF ENTRY - https://www.dailymotion.com/video/xtwoas :-)
  *******************************************************/
 let createError, express, path, cookieParser, indexRouter, usersRouter, potholeRoutes, seedRouter, app;
 
@@ -13,7 +13,7 @@ potholeRoutes = require('./routes/damnThePotholes');
 apiRouter = require('./routes/api');
 
 const config = require('./config/config');
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.NODE_ENV !== 'production'; // Determine if running in dev environment or production
 // create a rolling file logger based on date/time that fires process events
 const log = require('simple-node-logger');
 const logger_opts = {
@@ -39,7 +39,7 @@ app.engine('ejs', require('ejs-locals'));
 app.set('view engine', 'ejs');
 
 
-// app.set('view engine', 'pug'); // Replaced PUG with EJS
+// app.set('view engine', 'pug'); // Replaced PUG with EJS - K.E.Y.
 
 // Use these
 app.use(express.json());
@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 /*
-    SETUP OR DB CNXN
+    SETUP OuR DB CNXN
  */
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);

@@ -1,3 +1,7 @@
+/*************************************************
+ * NOTE: Currently unused. Nothing to see here for now.
+ *
+ */
 const PotHoleHit = require('../Models/PotHoleHit');
 
 const log = require('simple-node-logger');
