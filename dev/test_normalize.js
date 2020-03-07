@@ -4,7 +4,7 @@ const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const config = require('../config/config');
 //Set up mongoose connection
 let mongoose = require('mongoose');
-// Creating a branch
+
 
 function treatAsUTC(date)
 {
@@ -104,13 +104,14 @@ function normalize_near_hits(nearby_hits)
 // This function will take a list of hits and will merge ones within 10 meters to the center
 function merge_hits(hitlist, diameter)
 {
+    
     let merged_hits = [];
     let nearby_hits = [];
-
+    // console.log(hitlist);
     // let hitlist_sorted = sort_hits2(hitlist);
     // let modArray = sort_hits2(hitlist);
     let modArray = sort_hits(hitlist); // for geojson
-    console.log(modArray);
+    // console.log(modArray);
     // let modArray = hitlist_sorted.map(function (hit) {
     //     return {
     //         latitude: hit.lat,
@@ -195,7 +196,7 @@ function merge_hits(hitlist, diameter)
 }
 
 
-// let json_hits = readTextFile('./dtpgeojson.json');
+let json_hits = readTextFile('./dtpgeojson.json');
 // console.log(sort_hits(json_hits.features));
 
 // let json_hits = readTextFile('./testdata.json');
@@ -209,23 +210,23 @@ function merge_hits(hitlist, diameter)
  * @type {string}
  */
 let mongoDB = config.db;
-console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
-mongoose.connect(mongoDB, {useNewUrlParser: true})
-    .then(() =>
-    {
-        console.log(`connect to MongoDB at ${mongoDB} successful`);
-    })
-    .catch((err) =>
-    {
-        console.log(`connect to MongoDB at ${mongoDB} FAILED!${err.stack}`);
-        process.exit(1);
-    });
-mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// console.log(`Preparing to connect to MongoDB at ${mongoDB}`);
+// mongoose.connect(mongoDB, {useNewUrlParser: true})
+//     .then(() =>
+//     {
+//         console.log(`connect to MongoDB at ${mongoDB} successful`);
+//     })
+//     .catch((err) =>
+//     {
+//         console.log(`connect to MongoDB at ${mongoDB} FAILED!${err.stack}`);
+//         process.exit(1);
+//     });
+// mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // Read hits from db
 
-
 // Merge hits
-console.log(merge_hits(json_hits.features, 20));
+console.log(json_hits);
+merge_hits(json_hits.features, 20)
 
 
 //
