@@ -94,18 +94,39 @@ function merge_hits(hitlist, diameter)
     let currentHitCollection = sort_hits(hitlist);
     let hitsBeingFiltered = [];
     let hitsFilteredOutCollection = [];
+    let finalHitsCollected = [];
     console.log(`Current Number of hits: ${currentHitCollection.length}`);
     console.log("*************************************");
     currentHitCollection.forEach(function (element,index) 
     {
             if(hitsBeingFiltered.length === 0)
             {
-                hitsBeingFiltered.push(currentHitCollection.splice(index));
+                hitsBeingFiltered.push(element);
+                // console.log("here two");
             }
-            currentHitCollection.forEach((element,index)=>
+            // console.log(element);
+            for(let i=0;i <currentHitCollection.length;i++)
             {
-                
-            })
+                let filterElement = currentHitCollection[i];
+                // console.log(filterElement.geometry.coordinates)
+                if(!hitsBeingFiltered.includes(filterElement) && !finalHitsCollected.includes(filterElement) && !hitsFilteredOutCollection.includes(filterElement)){
+                let hit_distance = geo.getDistance(
+                    {latitude:element.geometry.coordinates[0],longitude:element.geometry.coordinates[1]},
+                    {latitude:currentHitCollection[i].geometry.coordinates[0],longitude:currentHitCollection[i].geometry.coordinates[1]});
+                    if(hit_distance > diameter)
+                    {
+                        // console.log("out of range");
+                    }
+                    else
+                    {
+                        hitsBeingFiltered.push(currentHitCollection[i]);
+                    }
+                }
+            }
+            if(hitsBeingFiltered.length === 1)
+            {
+                console.log("only one");
+            }
     })
 
 
@@ -114,8 +135,8 @@ function merge_hits(hitlist, diameter)
 }
 
 
-let json_hits = readTextFile('./test_dtp_json.json');
-// let json_hits = readTextFile('./dtpgeojson.json');
+// let json_hits = readTextFile('./test_dtp_json.json');
+let json_hits = readTextFile('./dtpgeojson.json');
 // console.log(sort_hits(json_hits.features))
 merge_hits(json_hits.features,20);
 
