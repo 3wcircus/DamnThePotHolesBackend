@@ -15,6 +15,7 @@ aboutmeRouter = require('./routes/aboutme')
 contactRouter = require('./routes/contact')
 endMapRouter = require('./routes/endMap');
 openMapRouter = require('./routes/openMap');
+statisticsRouter = require('./routes/statistics');
 
 
 const config = require('./config/config');
