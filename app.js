@@ -14,7 +14,7 @@ apiRouter = require('./routes/api');
 aboutmeRouter = require('./routes/aboutme')
 contactRouter = require('./routes/contact')
 endMapRouter = require('./routes/endMap');
-openMapRouter = require('./routes/open');
+openMapRouter = require('./routes/openMap');
 
 
 const config = require('./config/config');
@@ -83,7 +83,7 @@ app.use('/api', apiRouter);
 app.use('/aboutme', aboutmeRouter);
 app.use('/contact', contactRouter);
 app.use('/endMap', endMapRouter);
-app.use('/open', openMapRouter)
+app.use('/openMap', openMapRouter)
 
 
 // catch 404 and forward to error handler (that does basically nothing atm)
