@@ -11,6 +11,11 @@ indexRouter = require('./routes/index');
 usersRouter = require('./routes/users');
 potholeRoutes = require('./routes/damnThePotholes');
 apiRouter = require('./routes/api');
+aboutmeRouter = require('./routes/aboutme')
+contactRouter = require('./routes/contact')
+endMapRouter = require('./routes/endMap');
+openMapRouter = require('./routes/openMap');
+
 
 const config = require('./config/config');
 const isDev = process.env.NODE_ENV !== 'production'; // Determine if running in dev environment or production
@@ -27,7 +32,7 @@ logger.info('Server Running in DEV mode: ', isDev);
 
 // Get reference for Express
 app = express();
-
+//New comment
 // Bootstrap
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
@@ -75,6 +80,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dtp', potholeRoutes);
 app.use('/api', apiRouter);
+app.use('/aboutme', aboutmeRouter);
+app.use('/contact', contactRouter);
+app.use('/endMap', endMapRouter);
+app.use('/openMap', openMapRouter)
+
 
 // catch 404 and forward to error handler (that does basically nothing atm)
 app.use(function (req, res, next)
