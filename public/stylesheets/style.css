@@ -17,12 +17,11 @@ body {
     height: 800px;
     /*padding: 10px;*/
     border: 2px;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     font-size: 12px;
     /*text-align: center;*/
     color: #fff;
     /*background: #ee8a65;*/
-    border-radius: 25px;
     border: 2px solid #00478F;
 }
 
@@ -34,7 +33,7 @@ body {
 }
 
 .rcorners2 {
-    border-radius: 25px;
+    /* border-radius:  25px; */
     border: 2px solid #00478f;
     padding: 20px;
     margin-top: 20px;
