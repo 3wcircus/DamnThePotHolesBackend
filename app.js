@@ -77,8 +77,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dtp', potholeRoutes);
 app.use('/api', apiRouter);
-app.use('/aboutme', aboutmeRouter)
-app.use('/contact', contactRouter)
+app.use('/aboutme', aboutmeRouter);
+app.use('/contact', contactRouter);
 
 // catch 404 and forward to error handler (that does basically nothing atm)
 app.use(function (req, res, next)
