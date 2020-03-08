@@ -49,8 +49,11 @@ json_hits.forEach(function (element) {
             "geometry": {
                 "type":"Point",
                 "coordinates":[
-                   element.location1 ? element.location1.coordinates[0]:0,
-                    element.location1 ? element.location1.coordinates[1]:0
+                    // OPEN CASES
+                   // element.location_1 ? element.location_1.coordinates[0]:0,
+                   //  element.location_1 ? element.location_1.coordinates[1]:0
+                    element.location1 ? element.location1.coordinates[0]:0,
+                     element.location1 ? element.location1.coordinates[1]:0
                 ]
 
             },
@@ -59,7 +62,7 @@ json_hits.forEach(function (element) {
                 {
                     "date": element.reported_date,
                     "userTag": element.created_by_user,
-                    "marker": element.request_priority,
+                    "marker": 2112,
                     "x": element.x,
                     "y": element.y,
                     "z": element.z,

@@ -9,7 +9,9 @@ const express = require('express');
 const router = express.Router();
 const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const log = require('simple-node-logger');
+const fetch = require('node-fetch');
 
+const OPEN_311_USER = 'OPEN_311';
 // FIXME: This code for creating a log file is duplicated in each Route javascript and should not be
 // Create a rolling file logger based on date/time that fires process events
 const logger_opts = {
@@ -23,6 +25,11 @@ const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 // Base home page that displays all the maps and all the current hits
 router.route('/')
     .get(function (req, res) {
+        let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
+        // logger.info(arguments.callee.name);
+        logger.info(`Rendering Open Hit Map, ${arguments.callee.name}`);
+        logger.info(`Fetch OPen Hits, ${arguments.callee.name}`);
+
         // logger.info(arguments.callee.name);
         logger.info(`Rendering Open Hit Map, ${arguments.callee.name}`);
         // Add a new source from our GeoJSON data and set the
@@ -31,7 +38,58 @@ router.route('/')
             __v: false,
             _id: false
         };
-        console.log("root");
+        console.log("root open cases");
+        // Fetch the closed pot hole tickets from 31 web service
+        // TODO Add decent exception handling and clean this up
+        let caselocations = [];
+        fetch(OPEN_311_SVC_OPEN_TICKETS)
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                result.forEach(function (element) {
+                    let jsonhit =
+                        {
+                            "geometry": {
+                                "type":"Point",
+                                "coordinates":[
+                                    element.location1 ? element.location1.coordinates[0]:0,
+                                    element.location1 ? element.location1.coordinates[1]:0
+                                ]
+                            },
+                            "type": "Feature",
+                            "properties":
+                                {
+                                    "date": element.reported_date,
+                                    "userTag": OPEN_311_USER,
+                                    "marker": 2112,
+                                    "x": 0,
+                                    "y": 1,
+                                    "z": 2,
+                                    "lastx": 0,
+                                    "lasty": 0,
+                                    "lastz": 0,
+                                    "active": true
+                                }
+                        };
+                    // caselocations.features.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+                    caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+
+                });
+            })
+            .then((data) =>
+            {
+
+                logger.info(data); // Sanity checks
+                //     caselocations.forEach((c) =>{
+                //     logger.info(`DUMP:\n${caselocations}`);
+                // })
+            });
+
+        logger.debug(`DUMP\n ${caselocations}`);
+        // caselocations.forEach((c)=>{
+        //
+        // });
         // Pull hits from remote Mongo instance
         PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
             if (err) {
@@ -39,11 +97,12 @@ router.route('/')
                 res.send(err);
             }
             else {
-                console.log(potholes);
+                // console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('openMap', {
                     title: 'Open Cases',
-                    pot_holes: potholes
+                    pot_holes: potholes,
+                    case_locations: caselocations
                 });
             }
         });

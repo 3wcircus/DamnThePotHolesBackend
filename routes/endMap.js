@@ -109,7 +109,7 @@ router.route('/')
             })
             .then((data) =>
             {
-                // logger.debug(data); // Sanity checks
+                logger.debug(data); // Sanity checks
             //     caselocations.forEach((c) =>{
             //     logger.info(`DUMP:\n${caselocations}`);
             // })
