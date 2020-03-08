@@ -63,10 +63,12 @@ router.route('/')
          */
 
         // Setup an array to hold the returned results
-        let geojson_hits = {
-            "type": "FeatureCollection",
-            "features": []
-        };
+        // let caselocations = {
+        //     "type": "FeatureCollection",
+        //     "features": []
+        // };
+        let caselocations = [];
+
 
         // Fetch the closed pot hole tickets from 31 web service
         // TODO Add decent exception handling and clean this up
@@ -100,13 +102,17 @@ router.route('/')
                                     "active": true
                                 }
                         };
-                    geojson_hits.features.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+                    // caselocations.features.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+                    caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
 
                 });
             })
-            .then((data) => {
-                logger.debug(data); // Sanity checks
-                logger.info(geojson_hits);
+            .then((data) =>
+            {
+                // logger.debug(data); // Sanity checks
+            //     caselocations.forEach((c) =>{
+            //     logger.info(`DUMP:\n${caselocations}`);
+            // })
             });
 
         // Pull hits from remote Mongo instance
@@ -116,12 +122,15 @@ router.route('/')
                 res.send(err);
             }
             else {
-                logger.info(potholes);
-                console.log(potholes.features);
+                // potholes.concat(caselocations); // append tickets
+                // logger.info(potholes);
+                // console.log(potholes.features);
                 // let ph = JSON.parse(potholes);
+                console.log('xxxxxx'+caselocations);
                 res.render('endMap', {
                     title: 'Closed Cases',
-                    pot_holes: potholes
+                    pot_holes: potholes,
+                    case_locations: caselocations
                 });
             }
         });

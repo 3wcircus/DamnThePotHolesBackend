@@ -43,7 +43,7 @@ router.route('/')
             }
             else
             {
-                console.log(potholes);
+                // console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
                     title: 'DTP',

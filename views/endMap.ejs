@@ -16,11 +16,12 @@
         zoom: 9
     });
 
-    map.on('load', function () {
+    map.on('load', function ()
+    {
         console.log("Head " + '<%= title %>');
         map.addSource("potholes", {
             type: "geojson",
-            data: { "type": "FeatureCollection", "features": [<%- pot_holes %>] },
+            data: {"type": "FeatureCollection", "features": [<%- pot_holes %>]},
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -94,7 +95,7 @@
                     0, '#dc143c',
                     60, '#ffd700',
                     240, '#4169e1',
-                    /* other */ '#ccc'
+                    /* other */ '#1ecc34'
                 ],
                 "circle-radius": 6
                 // ,
@@ -104,10 +105,12 @@
         });
 
         // inspect a cluster on click
-        map.on('click', 'clusters', function (e) {
-            const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+        map.on('click', 'clusters', function (e)
+        {
+            const features = map.queryRenderedFeatures(e.point, {layers: ['clusters']});
             const clusterId = features[0].properties.cluster_id;
-            map.getSource('potholes').getClusterExpansionZoom(clusterId, function (err, zoom) {
+            map.getSource('potholes').getClusterExpansionZoom(clusterId, function (err, zoom)
+            {
                 if (err) {
                     return;
                 }
@@ -124,7 +127,8 @@
             closeOnClick: false
         });
 
-        map.on('mouseenter', 'unclustered-point', function (e) {
+        map.on('mouseenter', 'unclustered-point', function (e)
+        {
             // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
 
@@ -157,11 +161,318 @@
                 .addTo(map);
         });
 
-        map.on('mouseleave', 'unclustered-point', function () {
+        map.on('mouseleave', 'unclustered-point', function ()
+        {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
         map.resize();
     });
+    let cases = [{
+        "geometry": {"type": "Point", "coordinates": [-89.95526899999999, 35.239524000000074]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-11T16:17:58.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.97875899999997, 35.21291100000008]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-03-02T08:32:47.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.06947899999994, 35.037420000000054]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-21T14:58:37.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.85109499999999, 35.07857000000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2019-12-31T11:24:16.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.76845149999997, 35.181771000000026]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-25T06:52:05.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.93120499999999, 35.03783500000003]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-28T15:41:11.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.84902799499997, 35.191127952000045]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-01-16T13:13:35.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.93120499999999, 35.03783500000003]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-01-17T11:02:48.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.04924999999997, 35.14976000000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-16T18:00:26.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.04924999999997, 35.14976000000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-24T14:26:20.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.92852099999999, 35.05155000000008]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-25T11:49:29.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.72803944699996, 35.19753300900004]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-27T15:51:30.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.94919849999997, 35.09615400000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-08T18:26:34.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.85720049999998, 35.039976000000024]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-19T14:34:43.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-89.94014899999996, 35.22670800000003]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-01-29T13:39:54.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.05894809999995, 35.23113470000005]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-01-27T11:22:48.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.03740999999997, 35.108825000000024]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-21T16:48:50.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.04924999999997, 35.14976000000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-25T09:45:00.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }, {
+        "geometry": {"type": "Point", "coordinates": [-90.04924999999997, 35.14976000000007]},
+        "type": "Feature",
+        "properties": {
+            "date": "2020-02-21T16:44:52.000",
+            "userTag": "OPEN_311",
+            "marker": 2112,
+            "x": 0,
+            "y": 1,
+            "z": 2,
+            "lastx": 0,
+            "lasty": 0,
+            "lastz": 0,
+            "active": true
+        }
+    }
+    ];
+
+<!--    <% for (let x = 0; x< case_locations.length; x++) {%>-->
+<!--        console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxx ${case_locations[x]}`);-->
+<!--    <% } %>-->
+    cases.forEach((t) =>
+    {
+        // console.log(t);
+        // console.log(`********** ${t.geometry.coordinates} *************`);
+        // //Color of the marker
+        // var col = {
+        //     color: '#FC0FC0'
+        // };
+        // var col2 = {
+        //     color: '#FC0FC0'
+        // };
+        let marker = new mapboxgl.Marker()
+            .setLngLat(t.geometry.coordinates)
+            .addTo(map);
+    })
 
 </script>
