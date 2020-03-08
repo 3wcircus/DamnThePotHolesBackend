@@ -1,0 +1,89 @@
+{
+"type": "FeatureCollection",
+"features": [
+  {
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -89.767594,
+        35.2045019
+      ]
+    },
+    "type": "Feature",
+    "properties": {
+      "date": "Fri Jun 14 07:25:30 CDT 2019",
+      "userTag": "KEY",
+      "marker": 240,
+      "x": -1.0821792,
+      "y": 9.691729,
+      "z": 1.8195933,
+      "lastx": -1.0821792,
+      "lasty": 9.691729,
+      "lastz": 1.8195933
+    }
+  },
+  {
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -89.7676,
+        35.2268
+      ]
+    },
+    "type": "Feature",
+    "properties": {
+      "date": "Fri Jun 14 07:42:53 CDT 2019",
+      "userTag": "KEY",
+      "marker": 240,
+      "x": 2.1452048,
+      "y": 9.3661175,
+      "z": 0.842759,
+      "lastx": 2.1452048,
+      "lasty": 9.3661175,
+      "lastz": 0.842759
+    }
+  },
+  {
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -89.767594,
+        35.2045019
+      ]
+    },
+    "type": "Feature",
+    "properties": {
+      "date": "Fri Jun 14 09:52:13 CDT 2019",
+      "userTag": "KEY",
+      "marker": 240,
+      "x": -3.371036,
+      "y": 11.070788,
+      "z": 8.341399,
+      "lastx": -3.371036,
+      "lasty": 11.070788,
+      "lastz": 8.341399
+    }
+  },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7641946,
+          35.2035459
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "date": "Fri Jun 14 09:52:38 CDT 2019",
+        "userTag": "KEY",
+        "marker": 240,
+        "x": 4.462792,
+        "y": 5.602432,
+        "z": 1.0821792,
+        "lastx": 4.462792,
+        "lasty": 5.602432,
+        "lastz": 1.0821792
+      }
+    }
+]
+}

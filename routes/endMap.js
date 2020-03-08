@@ -120,7 +120,7 @@ router.route('/')
                 console.log(potholes.features);
                 // let ph = JSON.parse(potholes);
                 res.render('endMap', {
-                    title: 'Closed Map',
+                    title: 'Closed Cases',
                     pot_holes: potholes
                 });
             }

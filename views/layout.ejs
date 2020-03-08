@@ -35,24 +35,23 @@
     <body>
         <section class="container">
             <div>
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark rcorners2"><a class="navbar-brand"
-                                                                                      href="#"><%= title %></a>
+                <nav class="navbar navbar-expand-lg dtp-nav">
+                    <a class="navbar-brand" href="#"><%= title %></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                                 class="navbar-toggler-icon"></span></button>
-                    <div
-                            class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item"><a class="nav-link" href="/dtp">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="/aboutme">About</a>
                             <li class="nav-item"><a class="nav-link" href="/openMap">Open Cases</a>
                             <li class="nav-item"><a class="nav-link" href="/endMap">Closed Cases</a>
+                                <li class="nav-item"><a class="nav-link" href="/aboutme">About</a>
                             </li>
                         </ul>
-                        <ul class="navbar-nav float-right">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" onclick="displayMsg('Work N Progress');" href="#">Login</a>
                             </li>
                         </ul>

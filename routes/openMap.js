@@ -42,7 +42,7 @@ router.route('/')
                 console.log(potholes);
                 // let ph = JSON.parse(potholes);
                 res.render('openMap', {
-                    title: 'Open Map',
+                    title: 'Open Cases',
                     pot_holes: potholes
                 });
             }
