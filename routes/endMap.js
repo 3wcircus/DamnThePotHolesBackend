@@ -9,6 +9,9 @@ const express = require('express');
 const router = express.Router();
 const PotHoleHitG = require('../Models/PotHoleHitGEO');
 const log = require('simple-node-logger');
+const fetch = require('node-fetch');
+
+const OPEN_311_USER = 'OPEN_311';
 
 // FIXME: This code for creating a log file is duplicated in each Route javascript and should not be
 // Create a rolling file logger based on date/time that fires process events
@@ -19,19 +22,93 @@ const logger_opts = {
     dateFormat: 'YYYY.MM.DD'
 };
 const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
+//
+// async function getData(url = '', data = {}) {
+//     logger.info(`Fetching End Hits, ${arguments.callee.name}`);
+//     // Default options are marked with *
+//     const response = await fetch(url, {
+//         method: 'GET', // *GET, POST, PUT, DELETE, etc.
+//         mode: 'cors', // no-cors, *cors, same-origin
+//         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//         credentials: 'same-origin', // include, *same-origin, omit
+//         headers: {
+//             'Content-Type': 'application/json'
+//             // 'Content-Type': 'application/x-www-form-urlencoded',
+//         },
+//         redirect: 'follow', // manual, *follow, error
+//         referrerPolicy: 'no-referrer', // no-referrer, *client
+//         // body: JSON.stringify(data) // body data type must match "Content-Type" header
+//     });
+//     return await response.json(); // parses JSON response into native JavaScript objects
+// }
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
     .get(function (req, res) {
+        let OPEN_311_SVC_CLOSED_TICKETS = 'https://data.memphistn.gov/resource/2244-gnrp.json?category=Maintenance-Potholes';
         // logger.info(arguments.callee.name);
-        logger.info(`Rendering Hit Map, ${arguments.callee.name}`);
+        logger.info(`Rendering End Hit Map, ${arguments.callee.name}`);
+        logger.info(`Fetch Closed Hits, ${arguments.callee.name}`);
+
         // Add a new source from our GeoJSON data and set the
         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
         const dataFilter = {
             __v: false,
             _id: false
         };
-        console.log("root");
+        console.log("end root");
+        /*
+            This method will query open 311 for all closed pot hole tickets
+            Converts the returned data to GeoJSON
+         */
+
+        // Setup an array to hold the returned results
+        let geojson_hits = {
+            "type": "FeatureCollection",
+            "features": []
+        };
+
+        // Fetch the closed pot hole tickets from 31 web service
+        // TODO Add decent exception handling and clean this up
+        fetch(OPEN_311_SVC_CLOSED_TICKETS)
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                result.forEach(function (element) {
+                    let jsonhit =
+                        {
+                            "geometry": {
+                                "type":"Point",
+                                "coordinates":[
+                                    element.location1 ? element.location1.coordinates[0]:0,
+                                    element.location1 ? element.location1.coordinates[1]:0
+                                ]
+                            },
+                            "type": "Feature",
+                            "properties":
+                                {
+                                    "date": element.reported_date,
+                                    "userTag": OPEN_311_USER,
+                                    "marker": 2112,
+                                    "x": 0,
+                                    "y": 1,
+                                    "z": 2,
+                                    "lastx": 0,
+                                    "lasty": 0,
+                                    "lastz": 0,
+                                    "active": true
+                                }
+                        };
+                    geojson_hits.features.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+
+                });
+            })
+            .then((data) => {
+                logger.debug(data); // Sanity checks
+                logger.info(geojson_hits);
+            });
+
         // Pull hits from remote Mongo instance
         PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
             if (err) {
@@ -39,7 +116,8 @@ router.route('/')
                 res.send(err);
             }
             else {
-                console.log(potholes);
+                logger.info(potholes);
+                console.log(potholes.features);
                 // let ph = JSON.parse(potholes);
                 res.render('endMap', {
                     title: 'Closed Cases',
@@ -47,6 +125,8 @@ router.route('/')
                 });
             }
         });
+
+
     });
 
 

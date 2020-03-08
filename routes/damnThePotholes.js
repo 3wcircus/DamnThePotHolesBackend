@@ -69,7 +69,7 @@ router.route('/')
         }
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
         logger.info('New Hit Received: ', req.body);
-        // FIXME Should be able to generate all this from object. This is to hard-coded
+        // FIXME Should be able to generate all this from object. This is too hard-coded
         let jsonhit = new PotHoleHitG(
             {
                 "geometry": {
