@@ -1,15 +1,12 @@
 <!--Statistics on Percentage of Cases Closed out of Open Over Time Period-->
 <% layout('layout') -%>
-<h1\>
-    Percentage of Potholes Fixed out of Total Open Repair Tickets
+<h1>
+    Statistics
+    &nbsp;&nbsp;&nbsp;&nbsp;
 </h1>
 <!-- element with id attribute, reference to it in javascript, . enter html =  -->
-<p id="closedP"><%= nClosedPotholes %></p> 
+<h3>Total Open Pothole Repair Requests</h3>
+<p style="color:#EA3804";><%= nOpenPotholes %></p> 
+<!-- <h3>Percentage of Closed Pothole Repair Requests out of Total Open Repair Requests</h3> -->
 
 
-    <!-- var url_string = "https://data.memphistn.gov/resource/2244-gnrp.json?category=Maintenance-Potholes";
-    closedPotholes = new URL(url_string);
-    options = url.searchParams.getAll("options[]");
-    var myObj = JSON.parse(myJSON);
-document.getElementById("demo").innerHTML = myObj.name;
-    console.log(options); -->
