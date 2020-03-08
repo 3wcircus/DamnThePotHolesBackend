@@ -52,8 +52,8 @@ json_hits.forEach(function (element) {
             "properties":
                 {
                     "date": element.date,
-                    "userTag": element.userTag,
-                    "marker": element.marker,
+                    "userTag": element.userTag, // default to 311
+                    "marker": element.marker, // hardcode
                     "x": element.x,
                     "y": element.y,
                     "z": element.z,

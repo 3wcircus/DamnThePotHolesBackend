@@ -24,7 +24,7 @@ const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 router.route('/')
     .get(function (req, res) {
         // logger.info(arguments.callee.name);
-        logger.info(`Rendering Hit Map, ${arguments.callee.name}`);
+        logger.info(`Rendering Open Hit Map, ${arguments.callee.name}`);
         // Add a new source from our GeoJSON data and set the
         // 'cluster' option to true. GL-JS will add the point_count property to your source data.
         const dataFilter = {
