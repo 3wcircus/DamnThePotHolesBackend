@@ -16,6 +16,17 @@
         zoom: 9
     });
 
+    //************************************************************************************
+    //Added the option for the user to select the gps button in top right hand corner to zoom to current location.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: false
+        })
+    );
+
     map.on('load', function () {
         console.log("Head " + '<%= title %>');
         map.addSource("potholes", {

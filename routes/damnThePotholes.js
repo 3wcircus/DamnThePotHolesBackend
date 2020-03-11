@@ -32,7 +32,7 @@ router.route('/')
             __v: false,
             _id: false
         };
-        console.log("root");
+        console.log("Landing Page");
         // Pull hits from remote Mongo instance
         PotHoleHitG.find({}, dataFilter, function (err, potholes)
         { //Use the find method on the data model to search DB
@@ -43,7 +43,8 @@ router.route('/')
             }
             else
             {
-                // console.log(potholes);
+                logger.info(potholes[0]);
+                console.log(potholes[0]);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
                     title: 'DTP',
@@ -54,6 +55,108 @@ router.route('/')
     });
 
 
+
+
+/*
+    This route accepts an extra parameter that is how many days to go back for hits.
+    This route is IMPORTANT as it should let us filter hit results by age in days
+    TODO: This route needs more testing to confirm it works
+    TODO: If this tests out, rename and move to other route file
+ */
+
+// TODO: Move all helper functions to their own file
+// Helper function used in aging of hits
+function treatAsUTC(date)
+{
+    logger.debug(arguments.callee.name);
+    const result = new Date(date);
+    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+    return result;
+}
+
+// Helper function to calculate difference between days
+function daysBetween(startDate, endDate)
+{
+    logger.debug(arguments.callee.name);
+    const millisecondsPerDay = 24 * 60 * 60 * 1000;
+    return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+}
+
+router.route('/:age')
+    .get(function (req, res)
+    {
+
+        let age = req.params.age; // Get the number of aging days passed in
+        // console.log('Age = ' + age);
+        if (age)
+        {
+            console.log(age);
+            age = parseInt(age);
+        }
+        else
+        {
+            age = -1;
+        }
+        const dataFilter = {
+            __v: false,
+            _id: false
+        };
+        PotHoleHitG.find({}, dataFilter, function (err, result)
+        {
+            /*
+                FIXME: Should filter on database lookup, not after.
+                Right now gets all from database then filters down. This won't be acceptable should hit records reach severl thousand.
+             */
+            if (err)
+            {
+                res.send(err);
+            }
+            else
+            {
+                let pot_holes = result.filter(function (hit) // Super Kludge
+                { // Filter on age days compared to current date/time
+                    if (age < 1)
+                    {
+                        return true;
+                    }
+                    let dateToday = Date.now();
+                    let dateVal = Date.parse(hit.properties.date);
+                    let dateDateVal = new Date(dateVal);
+                    let dayDiff = daysBetween(dateDateVal, dateToday);
+                    // console.log(dayDiff);
+                    if (dayDiff <= age)
+                    {
+                        // console.log(dateDateVal.toDateString());
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+
+                });
+
+
+                // Now my array is aged and only hits that matched range included
+                // res.send(newArray); // debug
+                res.render('index', {
+                    title: 'DTP',
+                    pot_holes: pot_holes
+                });
+            }
+
+        })
+
+    });
+
+
+/*************************************************************
+ *
+ *
+ *  POST HIT CODE BELOW DO NOT DELETE
+ *
+ */
 // Posts a new hit received from an external device
 // ATM the Android app
 router.route('/')

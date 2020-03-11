@@ -1,11 +1,40 @@
 <% layout('layout') -%>
 <!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
 <!-- FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
-<div id='map'></div>
 
+<h1>All Pothole Hits</h1>
+
+<!--// Aged hits filter control-->
+<p>
+    <label for="select_time">Sort reports by the last: </label>
+
+    <select id="select_time">
+        <option>pick a time</option>
+        <option value="/dtp">all time</option>
+        <option value="/dtp/1">day</option>
+        <option value="/dtp/7">7 days</option>
+        <option value="/dtp/30">month (30 days)</option>
+        <option value="/dtp/60">2 months</option>
+        <option value="/dtp/90">3 months</option>
+        <option value="/dtp/180">6 months</option>
+        <option value="/dtp/270">9 months</option>
+        <option value="/dtp/365">year</option>
+    </select>
+</p>
+
+<div id='map'></div>
+<!--        // Aged hits-->
 <!--The entire content of this section comes from MapBox javascript-->
 <!--TODO: Can I pull this out into separate file?-->
 <script>
+    document.getElementById("select_time").onchange = function ()
+    {
+        if (this.selectedIndex !== 0)
+        {
+            window.location.href = this.value;
+        }
+    };
+
     mapboxgl.accessToken = 'pk.eyJ1Ijoia3lhbmN5IiwiYSI6ImNqeDRuaGI2ZDBiank0NGtqZTRrb2VoaGQifQ.j1Ap9ucUmQy0_7FGOh8fVA';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -15,21 +44,36 @@
         center: [-89.9517577, 35.1480818], // FIXME: starting position should be based on user/browser location
         zoom: 10
     });
+
+    //************************************************************************************
     //Added the option for the user to select the gps button in top right hand corner to zoom to current location.
     map.addControl(
         new mapboxgl.GeolocateControl({
             positionOptions: {
                 enableHighAccuracy: true
             },
-            trackUserLocation: true
+            trackUserLocation: false
         })
     );
 
-    //
 
+    /*************************************************************************
+     *  AGE FILTERING
+     *
+     ************************************************************************/
+
+
+
+    /*************************************************************************
+     *  AGE FILTERING
+     *
+     ************************************************************************/
+
+    // When map finishes setting up, load the injected list of hits and build/populate map
     map.on('load', function ()
     {
         console.log("Head " + '<%= title %>');
+
         map.addSource("potholes", {
             type: "geojson",
             data: {"type": "FeatureCollection", "features": [<%- pot_holes %>]},

@@ -94,7 +94,7 @@ router.route('/agetest/:age')
                     // console.log(dayDiff);
                     if (dayDiff <= age)
                     {
-                        console.log(dateDateVal.toDateString());
+                        // console.log(dateDateVal.toDateString());
                         return true;
                     }
                     else
@@ -107,7 +107,16 @@ router.route('/agetest/:age')
 
 
                 // Now my array is aged and only hits that matched range included
-                res.send(newArray);
+                // res.send(newArray);
+                // newArray.forEach((el,idx) => {
+                //     console.log(`G${idx}: ${el}`);
+                //     logger.info(`G${idx}: ${el}`);
+                // });
+
+                res.render('index', {
+                    title: 'DTP',
+                    pot_holes: newArray
+                });
             }
 
         })
