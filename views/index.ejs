@@ -4,36 +4,60 @@
 
 <h1>All Pothole Hits</h1>
 
+<!--/*************************************************************************-->
+<!--*  AGE FILTERING-->
+<!--*-->
+<!--************************************************************************/-->
 <!--// Aged hits filter control-->
-<p>
-    <label for="select_time">Sort reports by the last: </label>
+<!--<p>-->
+<!--    <label for="select_time">Sort reports by the last: </label>-->
 
-    <select id="select_time">
-        <option>pick a time</option>
-        <option value="/dtp">all time</option>
-        <option value="/dtp/1">day</option>
-        <option value="/dtp/7">7 days</option>
-        <option value="/dtp/30">month (30 days)</option>
-        <option value="/dtp/60">2 months</option>
-        <option value="/dtp/90">3 months</option>
-        <option value="/dtp/180">6 months</option>
-        <option value="/dtp/270">9 months</option>
-        <option value="/dtp/365">year</option>
-    </select>
-</p>
+<!--    <select id="select_time">-->
+<!--        <option>pick a time</option>-->
+<!--        <option value="/dtp">all time</option>-->
+<!--        <option value="/dtp/1">day</option>-->
+<!--        <option value="/dtp/7">7 days</option>-->
+<!--        <option value="/dtp/30">month (30 days)</option>-->
+<!--        <option value="/dtp/60">2 months</option>-->
+<!--        <option value="/dtp/90">3 months</option>-->
+<!--        <option value="/dtp/180">6 months</option>-->
+<!--        <option value="/dtp/270">9 months</option>-->
+<!--        <option value="/dtp/365">year</option>-->
+<!--    </select>-->
+<!--</p>-->
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter by Age
+    </a>
 
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/dtp">All</a>
+        <a class="dropdown-item" href="/dtp/1">Today</a>
+        <a class="dropdown-item" href="/dtp/7">1 week</a>
+        <a class="dropdown-item" href="/dtp/14">2 weeks</a>
+        <a class="dropdown-item" href="/dtp/30">1 Month</a>
+        <a class="dropdown-item" href="/dtp/90">3 Months</a>
+        <a class="dropdown-item" href="/dtp/180">6 Months</a>
+        <a class="dropdown-item" href="/dtp/270">9 Months</a>
+        <a class="dropdown-item" href="/dtp/365">1 Year</a>
+    </div>
+</div>
+<!--/*************************************************************************-->
+<!--*  AGE FILTERING-->
+<!--*-->
+<!--************************************************************************/-->
 <div id='map'></div>
 <!--        // Aged hits-->
 <!--The entire content of this section comes from MapBox javascript-->
 <!--TODO: Can I pull this out into separate file?-->
 <script>
-    document.getElementById("select_time").onchange = function ()
-    {
-        if (this.selectedIndex !== 0)
-        {
-            window.location.href = this.value;
-        }
-    };
+    // document.getElementById("select_time").onchange = function ()
+    // {
+    //     if (this.selectedIndex !== 0)
+    //     {
+    //         window.location.href = this.value;
+    //     }
+    // };
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoia3lhbmN5IiwiYSI6ImNqeDRuaGI2ZDBiank0NGtqZTRrb2VoaGQifQ.j1Ap9ucUmQy0_7FGOh8fVA';
     var map = new mapboxgl.Map({
@@ -57,17 +81,6 @@
     );
 
 
-    /*************************************************************************
-     *  AGE FILTERING
-     *
-     ************************************************************************/
-
-
-
-    /*************************************************************************
-     *  AGE FILTERING
-     *
-     ************************************************************************/
 
     // When map finishes setting up, load the injected list of hits and build/populate map
     map.on('load', function ()
