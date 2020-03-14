@@ -2,7 +2,7 @@
 <!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
 <!-- FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
 
-<h1>All Pothole Hits</h1>
+<h1 class="dtp-title">All Pothole Hits</h1>
 
 <!--/*************************************************************************-->
 <!--*  AGE FILTERING-->
@@ -25,13 +25,19 @@
 <!--        <option value="/dtp/365">year</option>-->
 <!--    </select>-->
 <!--</p>-->
-<div class="dropdown">
+<script>
+let filterChanged = (evt) => {
+    console.log(`Filter ${evt.target.value}`);
+}
+
+</script>
+<div class="dropdown dtp_filter">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Filter by Age
     </a>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="/dtp">All</a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" onchange="filterChanged">
+        <a class="dropdown-item" href="/dtp">All Active Hits</a>
         <a class="dropdown-item" href="/dtp/1">Today</a>
         <a class="dropdown-item" href="/dtp/7">1 week</a>
         <a class="dropdown-item" href="/dtp/14">2 weeks</a>
@@ -41,6 +47,7 @@
         <a class="dropdown-item" href="/dtp/270">9 Months</a>
         <a class="dropdown-item" href="/dtp/365">1 Year</a>
     </div>
+    <span id="current-filter-text">All Active Hits</span>
 </div>
 <!--/*************************************************************************-->
 <!--*  AGE FILTERING-->

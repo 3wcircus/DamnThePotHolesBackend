@@ -2,7 +2,8 @@
 <!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
 <!--FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
 <head>
-    <title><%= title %></title>
+<!--    FIXME: Title often breaks -->
+<!--    <title>< %= title % ></title>-->
     <meta charset='utf-8'/>
     <!--    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>-->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -20,6 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4351854-3"></script>
     <script>
+        // window.dataLayer = window.dataLayer || [];
 
         function gtag()
         {
@@ -37,7 +39,7 @@
     <section class="container">
         <div>
             <nav class="navbar navbar-expand-lg dtp-nav">
-                <a class="navbar-brand" href="#"><%= title %></a>
+                <a class="navbar-brand" href="#">DTP</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false"

@@ -9,18 +9,20 @@ h1, h3{
 }
 
 #map {
+    /*grid-row: 4/10;*/
     /*position: absolute;*/
     /*top: 60px;*/
     /*bottom: 0;*/
     /*width: 49%;*/
     /*height: 100%;*/
+    margin: 1rem;
     display: block;
     position: relative;
-    margin: 0px auto;
+    /*margin: 0px auto;*/
     width: 100%;
     height: 700px;
     /*padding: 10px;*/
-    border: 4px;
+    border: 4px solid darkblue;
     /* border-radius: 3px; */
     font-size: 12px;
     /*text-align: center;*/
@@ -29,19 +31,44 @@ h1, h3{
     /* border: 2px solid #00478F; */
 }
 
+#dtp-app-imgs {
+    /*display:grid;*/
+    /*grid-auto-columns: 1fr 1fr;*/
+    text-align: center;
+}
+
+.dtp-title {
+    /*grid-row: 2/2;*/
+}
+
+.dtp_filter {
+    /*grid-row: 3/3;*/
+}
+
 .dtp-nav{
     margin: 1% 0 1% 0;
     padding: 1%;
     /* background-color: #376996; */
     background-color: #547EA3;
+    grid-row: 1/1;
 }
 .container {
     font-size: larger;
-    display: grid;
-    grid-template-columns: 100%;
+    /*display: grid;*/
+    /*grid-template-columns: 1fr;*/
+    /*grid-template-rows: repeat(10,1fr);*/
     /* grid-gap: 1rem; */
 }
 
+.dtp-img {
+    /*grid-column: auto;*/
+    margin: 3rem;
+    width: 10rem;
+}
+
+figure {
+    display: inline-block;
+}
 /* a {
     color: white;
 } */
