@@ -92,7 +92,6 @@ let filterChanged = (evt) => {
     // When map finishes setting up, load the injected list of hits and build/populate map
     map.on('load', function ()
     {
-        console.log("Head " + '<%= title %>');
 
         map.addSource("potholes", {
             type: "geojson",

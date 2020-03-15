@@ -22,9 +22,11 @@ const logger_opts = {
 };
 const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 
-// TODO: Get async/await version working
-async function apiGetAll () {
-    try {
+// Get async/await version working
+async function apiGetAll()
+{
+    try
+    {
         logger.info('get asynch');
         let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
         const resp = await fetch(OPEN_311_SVC_OPEN_TICKETS);
@@ -35,10 +37,10 @@ async function apiGetAll () {
             let jsonhit =
                 {
                     "geometry": {
-                        "type":"Point",
-                        "coordinates":[
-                            element.location1 ? element.location1.coordinates[0]:0,
-                            element.location1 ? element.location1.coordinates[1]:0
+                        "type": "Point",
+                        "coordinates": [
+                            element.location_1 ? element.location_1.coordinates[0] : 0,
+                            element.location_1 ? element.location_1.coordinates[1] : 0
                         ]
                     },
                     "type": "Feature",
@@ -53,18 +55,21 @@ async function apiGetAll () {
                             "lastx": 0,
                             "lasty": 0,
                             "lastz": 0,
-                            "active": true
+                            "active": true,
+                            "address1": element.address1,
+                            "postal_code": element.postal_code,
+                            "incident_id":element.incident_id,
+                            "incident_number":element.incident_number
                         }
                 };
-            // caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
-            // logger.info(`pushed ${jsonhit}`);
             return jsonhit;
         });
-        // caselocations = `[${caselocations}]`;
         logger.info(`Fetch: ${caselocations}`);
-        logger.info(`Type: ${typeof(caselocations)}`);
+        logger.info(`Type: ${typeof (caselocations)}`);
         return caselocations;
-    } catch (err) {
+    }
+    catch (err)
+    {
 // all errors will be captured here for anything in the try block
         console.log(err)
     }
@@ -72,8 +77,9 @@ async function apiGetAll () {
 
 // Base home page that displays all the maps and all the current hits
 router.route('/')
-    .get(function (req, res) {
-        let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
+    .get(function (req, res)
+    {
+        // let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
         // logger.info(arguments.callee.name);
         logger.info(`Rendering Open Hit Map, ${arguments.callee.name}`);
         logger.info(`Fetch OPen Hits, ${arguments.callee.name}`);
@@ -89,29 +95,33 @@ router.route('/')
         console.log("root open cases");
 
         // Pull hits from remote Mongo instance
-        let potholes = [];
-        PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
-            if (err) {
+        PotHoleHitG.find({}, dataFilter, function (err, potholes)
+        { //Use the find method on the data model to search DB
+            if (err)
+            {
                 console.log("Error getting hit records: \n" + potholes);
                 res.send(err);
             }
+            else
+            {
+                // Fetch the open pot hole tickets from 31 web service
+                let caselocations = [];
+                // TODO Add decent exception handling and clean this up
+                apiGetAll()
+                    .then((data) =>
+                        {
+                            caselocations = data;
+                            logger.info(`AFTER ${caselocations.length}`);
+                            res.render('openMap', {
+                                pgtitle: 'OPEN Cases',
+                                pot_holes: potholes,
+                                case_locations: caselocations
+                            });
+                        }
+                    );
+            }
         });
-        // Fetch the open pot hole tickets from 31 web service
-        let caselocations = [];
-            // TODO Add decent exception handling and clean this up
-        apiGetAll()
-            .then((data) =>
-                {
 
-                    caselocations = data;
-                    logger.info(`AFTER ${caselocations.length}`);
-                    res.render('openMap', {
-                        pgtitle: 'OPEN Cases',
-                        pot_holes: potholes,
-                        case_locations: caselocations
-                    });
-                }
-            );
 
         // fetch(OPEN_311_SVC_OPEN_TICKETS)
         //     .then((response) => {
@@ -168,9 +178,11 @@ router.route('/')
 // Posts a new hit received from an external device
 // ATM the Android app
 router.route('/')
-    .post(function (req, res) {
+    .post(function (req, res)
+    {
         logger.debug(arguments.callee.name);
-        if (!req.body) {
+        if (!req.body)
+        {
             // FIXME: why does just trying to log to console render a template? And here it will case an exception
             logger.warn('No Request Body in Hit POST');
             res.send({});
@@ -188,20 +200,21 @@ router.route('/')
                 },
                 "type": "Feature",
                 "properties":
-                {
-                    "date": req.body.date,
-                    "userTag": req.body.userTag,
-                    "marker": req.body.marker,
-                    "x": req.body.x,
-                    "y": req.body.y,
-                    "z": req.body.z,
-                    "lastx": req.body.lastx,
-                    "lasty": req.body.lasty,
-                    "lastz": req.body.lastz,
-                    "active": true
-                }
+                    {
+                        "date": req.body.date,
+                        "userTag": req.body.userTag,
+                        "marker": req.body.marker,
+                        "x": req.body.x,
+                        "y": req.body.y,
+                        "z": req.body.z,
+                        "lastx": req.body.lastx,
+                        "lasty": req.body.lasty,
+                        "lastz": req.body.lastz,
+                        "active": true
+                    }
             });
-        PotHoleHitG.create(jsonhit).then(function (bump) {
+        PotHoleHitG.create(jsonhit).then(function (bump)
+        {
             res.send(bump);
         })
     });
@@ -253,7 +266,8 @@ router.route('/')
 
 // Routes for app controlers
 router.route('/')
-    .get(function (req, res) {
+    .get(function (req, res)
+    {
         console.log(`Rendering Hit Map, ${arguments.callee.name}`);
         res.send('Get a Job')
     });
