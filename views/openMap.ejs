@@ -169,8 +169,8 @@
                 .setText(
                     `${description}
                      ${coordinates}
-                     ${e.features[0].properties.x} ${e.features[0].properties.y} ${e.features[0].properties.z}
-                     ${e.features[0].properties.lastx} ${e.features[0].properties.lasty} ${e.features[0].properties.lastz}
+                     ${e.features[0].properties.x} / ${e.features[0].properties.y} / ${e.features[0].properties.z}
+                     ${e.features[0].properties.lastx} / ${e.features[0].properties.lasty} / ${e.features[0].properties.lastz}
                      ${user}
                 `)
                 .addTo(map);
@@ -210,10 +210,16 @@
         // var col2 = {
         //     color: '#FC0FC0'
         // };
-        let marker = new mapboxgl.Marker()
+        let marker = new mapboxgl.Marker({color: '#1e5470'})
             .setLngLat(t.geometry.coordinates)
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML(`<p>${t.properties.incident_id}/${t.properties.incident_number}</p><p>${t.properties.date}</p><p>${t.properties.address1}, ${t.properties.postal_code}</p>`))
+            .setText(
+                `
+                ${t.properties.date}
+                ${t.properties.incident_id} / ${t.properties.incident_number}
+                ${t.properties.address1}, ${t.properties.postal_code}
+            `))
+                // .setHTML(`<p>${t.properties.incident_id}/${t.properties.incident_number}</p><p>${t.properties.date}</p><p>${t.properties.address1}, ${t.properties.postal_code}</p>`))
             .addTo(map);
     };
 

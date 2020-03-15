@@ -27,7 +27,7 @@ async function apiGetAll()
 {
     try
     {
-        logger.info('get asynch');
+        logger.info('get asynch open cases');
         let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
         const resp = await fetch(OPEN_311_SVC_OPEN_TICKETS);
         const newResp = await resp.json();
@@ -64,8 +64,8 @@ async function apiGetAll()
                 };
             return jsonhit;
         });
-        logger.info(`Fetch: ${caselocations}`);
-        logger.info(`Type: ${typeof (caselocations)}`);
+        // logger.info(`Fetch: ${caselocations}`);
+        // logger.info(`Type: ${typeof (caselocations)}`);
         return caselocations;
     }
     catch (err)
@@ -121,57 +121,6 @@ router.route('/')
                     );
             }
         });
-
-
-        // fetch(OPEN_311_SVC_OPEN_TICKETS)
-        //     .then((response) => {
-        //         return response.json();
-        //     })
-        //     .then((result) => {
-        //         logger.info(`RES\n ${result.length}`);
-        //         // caselocations = result.forEach(function (element) {
-        //         caselocations = result.map(function (element)
-        //         {
-        //             let jsonhit =
-        //                 {
-        //                     "geometry": {
-        //                         "type":"Point",
-        //                         "coordinates":[
-        //                             element.location1 ? element.location1.coordinates[0]:0,
-        //                             element.location1 ? element.location1.coordinates[1]:0
-        //                         ]
-        //                     },
-        //                     "type": "Feature",
-        //                     "properties":
-        //                         {
-        //                             "date": element.reported_date,
-        //                             "userTag": OPEN_311_USER,
-        //                             "marker": 2112,
-        //                             "x": 0,
-        //                             "y": 1,
-        //                             "z": 2,
-        //                             "lastx": 0,
-        //                             "lasty": 0,
-        //                             "lastz": 0,
-        //                             "active": true
-        //                         }
-        //                 };
-        //             // caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
-        //             // logger.info(`pushed ${jsonhit}`);
-        //             return jsonhit;
-        //         });
-        //         return result;
-        //     })
-        //     .then((data) =>
-        //     {
-        //
-        //         // logger.info(`REC: ${data}`); // Sanity checks
-        //         // logger.info(`DUMP\n ${caselocations}`);
-        //         logger.info(`DUMP\n ${caselocations.length}`);
-        //     });
-
-        // logger.info(`AFTER\n ${caselocations.length}`);
-
     });
 
 

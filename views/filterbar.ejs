@@ -1,18 +1,26 @@
 <!-- This needs to replace copied code in all the templates -->
-<!--// Aged hits filter control-->
-<div>
-    <label for="select_time">Sort reports by the last: </label>
+<script>
+    let filterChanged = (evt) => {
+        console.log(`Filter ${evt.target.value}`);
+    }
 
-    <select id="select_time">
-        <option>pick a time</option>
-        <option value="/dtp">all time</option>
-        <option value="/dtp/1">day</option>
-        <option value="/dtp/7">7 days</option>
-        <option value="/dtp/30">month (30 days)</option>
-        <option value="/dtp/60">2 months</option>
-        <option value="/dtp/90">3 months</option>
-        <option value="/dtp/180">6 months</option>
-        <option value="/dtp/270">9 months</option>
-        <option value="/dtp/365">year</option>
-    </select>
+</script>
+<div class="dropdown dtp_filter">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter by Age
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" onchange="filterChanged">
+        <a class="dropdown-item" href="/dtp">All Active Hits</a>
+        <a class="dropdown-item" href="/dtp/1">Today</a>
+        <a class="dropdown-item" href="/dtp/7">1 week</a>
+        <a class="dropdown-item" href="/dtp/14">2 weeks</a>
+        <a class="dropdown-item" href="/dtp/30">1 Month</a>
+        <a class="dropdown-item" href="/dtp/90">3 Months</a>
+        <a class="dropdown-item" href="/dtp/180">6 Months</a>
+        <a class="dropdown-item" href="/dtp/270">9 Months</a>
+        <a class="dropdown-item" href="/dtp/365">1 Year</a>
+    </div>
+    <!--    <span id="current-filter-text">All Active Hits</span>-->
 </div>
+
