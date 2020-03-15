@@ -128,7 +128,7 @@ router.route('/')
                 // let ph = JSON.parse(potholes);
                 console.log('xxxxxx'+caselocations);
                 res.render('endMap', {
-                    title: 'Closed Cases',
+                    pgtitle: 'Closed Cases',
                     pot_holes: potholes,
                     case_locations: caselocations
                 });

@@ -22,6 +22,54 @@ const logger_opts = {
 };
 const logger = log.createRollingFileLogger(logger_opts); // Create a Logger
 
+// TODO: Get async/await version working
+async function apiGetAll () {
+    try {
+        logger.info('get asynch');
+        let OPEN_311_SVC_OPEN_TICKETS = 'https://data.memphistn.gov/resource/aiee-9zqu.json?category=Maintenance-Potholes';
+        const resp = await fetch(OPEN_311_SVC_OPEN_TICKETS);
+        const newResp = await resp.json();
+        logger.info(`ASYNCH ${newResp.length}`);
+        let caselocations = newResp.map(function (element)
+        {
+            let jsonhit =
+                {
+                    "geometry": {
+                        "type":"Point",
+                        "coordinates":[
+                            element.location1 ? element.location1.coordinates[0]:0,
+                            element.location1 ? element.location1.coordinates[1]:0
+                        ]
+                    },
+                    "type": "Feature",
+                    "properties":
+                        {
+                            "date": element.reported_date,
+                            "userTag": OPEN_311_USER,
+                            "marker": 2112,
+                            "x": 0,
+                            "y": 1,
+                            "z": 2,
+                            "lastx": 0,
+                            "lasty": 0,
+                            "lastz": 0,
+                            "active": true
+                        }
+                };
+            // caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+            // logger.info(`pushed ${jsonhit}`);
+            return jsonhit;
+        });
+        // caselocations = `[${caselocations}]`;
+        logger.info(`Fetch: ${caselocations}`);
+        logger.info(`Type: ${typeof(caselocations)}`);
+        return caselocations;
+    } catch (err) {
+// all errors will be captured here for anything in the try block
+        console.log(err)
+    }
+}
+
 // Base home page that displays all the maps and all the current hits
 router.route('/')
     .get(function (req, res) {
@@ -39,73 +87,81 @@ router.route('/')
             _id: false
         };
         console.log("root open cases");
-        // Fetch the closed pot hole tickets from 31 web service
-        // TODO Add decent exception handling and clean this up
-        let caselocations = [];
-        fetch(OPEN_311_SVC_OPEN_TICKETS)
-            .then((response) => {
-                return response.json();
-            })
-            .then((result) => {
-                result.forEach(function (element) {
-                    let jsonhit =
-                        {
-                            "geometry": {
-                                "type":"Point",
-                                "coordinates":[
-                                    element.location1 ? element.location1.coordinates[0]:0,
-                                    element.location1 ? element.location1.coordinates[1]:0
-                                ]
-                            },
-                            "type": "Feature",
-                            "properties":
-                                {
-                                    "date": element.reported_date,
-                                    "userTag": OPEN_311_USER,
-                                    "marker": 2112,
-                                    "x": 0,
-                                    "y": 1,
-                                    "z": 2,
-                                    "lastx": 0,
-                                    "lasty": 0,
-                                    "lastz": 0,
-                                    "active": true
-                                }
-                        };
-                    // caselocations.features.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
-                    caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
 
-                });
-            })
-            .then((data) =>
-            {
-
-                logger.info(data); // Sanity checks
-                //     caselocations.forEach((c) =>{
-                //     logger.info(`DUMP:\n${caselocations}`);
-                // })
-            });
-
-        logger.debug(`DUMP\n ${caselocations}`);
-        // caselocations.forEach((c)=>{
-        //
-        // });
         // Pull hits from remote Mongo instance
+        let potholes = [];
         PotHoleHitG.find({}, dataFilter, function (err, potholes) { //Use the find method on the data model to search DB
             if (err) {
                 console.log("Error getting hit records: \n" + potholes);
                 res.send(err);
             }
-            else {
-                // console.log(potholes);
-                // let ph = JSON.parse(potholes);
-                res.render('openMap', {
-                    title: 'Open Cases',
-                    pot_holes: potholes,
-                    case_locations: caselocations
-                });
-            }
         });
+        // Fetch the open pot hole tickets from 31 web service
+        let caselocations = [];
+            // TODO Add decent exception handling and clean this up
+        apiGetAll()
+            .then((data) =>
+                {
+
+                    caselocations = data;
+                    logger.info(`AFTER ${caselocations.length}`);
+                    res.render('openMap', {
+                        pgtitle: 'OPEN Cases',
+                        pot_holes: potholes,
+                        case_locations: caselocations
+                    });
+                }
+            );
+
+        // fetch(OPEN_311_SVC_OPEN_TICKETS)
+        //     .then((response) => {
+        //         return response.json();
+        //     })
+        //     .then((result) => {
+        //         logger.info(`RES\n ${result.length}`);
+        //         // caselocations = result.forEach(function (element) {
+        //         caselocations = result.map(function (element)
+        //         {
+        //             let jsonhit =
+        //                 {
+        //                     "geometry": {
+        //                         "type":"Point",
+        //                         "coordinates":[
+        //                             element.location1 ? element.location1.coordinates[0]:0,
+        //                             element.location1 ? element.location1.coordinates[1]:0
+        //                         ]
+        //                     },
+        //                     "type": "Feature",
+        //                     "properties":
+        //                         {
+        //                             "date": element.reported_date,
+        //                             "userTag": OPEN_311_USER,
+        //                             "marker": 2112,
+        //                             "x": 0,
+        //                             "y": 1,
+        //                             "z": 2,
+        //                             "lastx": 0,
+        //                             "lasty": 0,
+        //                             "lastz": 0,
+        //                             "active": true
+        //                         }
+        //                 };
+        //             // caselocations.push(jsonhit); // Add to the array of closed tickets converted to GeoJSON
+        //             // logger.info(`pushed ${jsonhit}`);
+        //             return jsonhit;
+        //         });
+        //         return result;
+        //     })
+        //     .then((data) =>
+        //     {
+        //
+        //         // logger.info(`REC: ${data}`); // Sanity checks
+        //         // logger.info(`DUMP\n ${caselocations}`);
+        //         logger.info(`DUMP\n ${caselocations.length}`);
+        //     });
+
+        // logger.info(`AFTER\n ${caselocations.length}`);
+
     });
 
 

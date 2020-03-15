@@ -2,8 +2,9 @@
 <!--THIS REPLACES THE PUG GOOGLE MAPS IMPLEMENTATION-->
 <!--FIXME: CSS STILL BROKEN, MAP DOES NOT USE FULL VERTICAL DISPLAY AREA-->
 <head>
-<!--    FIXME: Title often breaks -->
-<!--    <title>< %= title % ></title>-->
+<!--    FIXME: Title often breaks
+        this condional seems to work but still not why sometimes undefined KEY-->
+
     <meta charset='utf-8'/>
     <!--    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>-->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -21,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4351854-3"></script>
     <script>
-        // window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
         function gtag()
         {
