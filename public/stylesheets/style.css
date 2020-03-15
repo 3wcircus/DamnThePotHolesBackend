@@ -94,7 +94,7 @@ a:hover{
     background-color: #1D3461;
 }
 .mapboxgl-popup {
-    max-width: 200px;
+    max-width: 400px;
 }
 
 .mapboxgl-popup-content {
@@ -103,3 +103,11 @@ a:hover{
     color: #0b2e13;
 }
 
+#open311url {
+    color: #062c33;
+}
+
+.px-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}

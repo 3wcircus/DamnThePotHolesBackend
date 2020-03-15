@@ -43,12 +43,13 @@ router.route('/')
             }
             else
             {
-                logger.info(potholes[0]);
-                console.log(potholes[0]);
+                // logger.info(potholes[0]);
+                // console.log(potholes[0]);
                 // let ph = JSON.parse(potholes);
                 res.render('index', {
                     pgtitle: 'DTP',
-                    pot_holes: potholes
+                    pot_holes: potholes,
+                    ctxroot: '/dtp'
                 });
             }
         });
@@ -141,8 +142,9 @@ router.route('/:age')
                 // Now my array is aged and only hits that matched range included
                 // res.send(newArray); // debug
                 res.render('index', {
-                    title: 'DTP',
-                    pot_holes: pot_holes
+                    pgtitle: 'DTP',
+                    pot_holes: pot_holes,
+                    ctxroot: '/dtp'
                 });
             }
 
@@ -173,6 +175,7 @@ router.route('/')
         // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
         logger.info('New Hit Received: ', req.body);
         // FIXME Should be able to generate all this from object. This is too hard-coded
+        // FIXME: Should send dates from mobile app as ISO8601 format and not converting here.
         let jsonhit = new PotHoleHitG(
             {
                 "geometry": {
@@ -183,7 +186,7 @@ router.route('/')
                 "type": "Feature",
                 "properties":
                     {
-                        "date": req.body.date,
+                        "date": new Date(Date.parse(req.body.date)).toISOString(),
                         "userTag": req.body.userTag,
                         "marker": req.body.marker,
                         "x": req.body.x,

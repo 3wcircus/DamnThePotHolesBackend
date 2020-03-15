@@ -95,11 +95,11 @@ router.route('/')
         console.log("root open cases");
 
         // Pull hits from remote Mongo instance
-        PotHoleHitG.find({}, dataFilter, function (err, potholes)
+        PotHoleHitG.find({}, dataFilter, function (err, pot_holes)
         { //Use the find method on the data model to search DB
             if (err)
             {
-                console.log("Error getting hit records: \n" + potholes);
+                console.log("Error getting hit records: \n" + pot_holes);
                 res.send(err);
             }
             else
@@ -114,8 +114,9 @@ router.route('/')
                             logger.info(`AFTER ${caselocations.length}`);
                             res.render('openMap', {
                                 pgtitle: 'OPEN Cases',
-                                pot_holes: potholes,
-                                case_locations: caselocations
+                                pot_holes: pot_holes,
+                                case_locations: caselocations,
+                                ctxroot: '/openMap'
                             });
                         }
                     );
@@ -124,48 +125,114 @@ router.route('/')
     });
 
 
-// Posts a new hit received from an external device
-// ATM the Android app
-router.route('/')
-    .post(function (req, res)
-    {
-        logger.debug(arguments.callee.name);
-        if (!req.body)
-        {
-            // FIXME: why does just trying to log to console render a template? And here it will case an exception
-            logger.warn('No Request Body in Hit POST');
-            res.send({});
-            return;
-        }
-        // FIXME: why does just trying to log to console render a template? Ane here it will case an exception
-        logger.info('New Hit Received: ', req.body);
-        // FIXME Should be able to generate all this from object. This is to hard-coded
-        let jsonhit = new PotHoleHitG(
-            {
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [req.body.longitude, req.body.latitude],
 
-                },
-                "type": "Feature",
-                "properties":
-                    {
-                        "date": req.body.date,
-                        "userTag": req.body.userTag,
-                        "marker": req.body.marker,
-                        "x": req.body.x,
-                        "y": req.body.y,
-                        "z": req.body.z,
-                        "lastx": req.body.lastx,
-                        "lasty": req.body.lasty,
-                        "lastz": req.body.lastz,
-                        "active": true
-                    }
-            });
-        PotHoleHitG.create(jsonhit).then(function (bump)
+/*
+    This route accepts an extra parameter that is how many days to go back for hits.
+    This route is IMPORTANT as it should let us filter hit results by age in days
+    TODO: This route needs more testing to confirm it works
+    TODO: If this tests out, rename and move to other route file
+ */
+
+// TODO: Move all helper functions to their own file
+// Helper function used in aging of hits
+function treatAsUTC(date)
+{
+    logger.debug(arguments.callee.name);
+    const result = new Date(date);
+    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+    return result;
+}
+
+// Helper function to calculate difference between days
+function daysBetween(startDate, endDate)
+{
+    logger.debug(arguments.callee.name);
+    const millisecondsPerDay = 24 * 60 * 60 * 1000;
+    return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+}
+
+router.route('/:age')
+    .get(function (req, res)
+    {
+
+        let age = req.params.age; // Get the number of aging days passed in
+        // console.log('Age = ' + age);
+        if (age)
         {
-            res.send(bump);
+            console.log(age);
+            age = parseInt(age);
+        }
+        else
+        {
+            age = -1;
+        }
+        const dataFilter = {
+            __v: false,
+            _id: false
+        };
+        PotHoleHitG.find({}, dataFilter, function (err, result)
+        {
+            /*
+                FIXME: Should filter on database lookup, not after.
+                Right now gets all from database then filters down. This won't be acceptable should hit records reach severl thousand.
+             */
+            if (err)
+            {
+                res.send(err);
+            }
+            else
+            {
+                let pot_holes = result.filter(function (hit) // Super Kludge
+                { // Filter on age days compared to current date/time
+                    if (age < 1)
+                    {
+                        return true;
+                    }
+                    let dateToday = Date.now();
+                    let dateVal = Date.parse(hit.properties.date);
+                    let dateDateVal = new Date(dateVal);
+                    let dayDiff = daysBetween(dateDateVal, dateToday);
+                    // console.log(dayDiff);
+                    if (dayDiff <= age)
+                    {
+                        // console.log(dateDateVal.toDateString());
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+
+                });
+
+                // Fetch the open pot hole tickets from 31 web service
+                let caselocations = [];
+                // TODO Add decent exception handling and clean this up
+                apiGetAll()
+                    .then((data) =>
+                        {
+                            caselocations = data;
+                            logger.info(`AFTER ${caselocations.length}`);
+                            res.render('openMap', {
+                                pgtitle: 'OPEN Cases',
+                                pot_holes: pot_holes,
+                                case_locations: caselocations,
+                                ctxroot: '/openMap'
+                            });
+                        }
+                    );
+                // Now my array is aged and only hits that matched range included
+                // res.send(newArray); // debug
+                // res.render('openMap', {
+                //     title: 'DTP',
+                //     pot_holes: pot_holes,
+                //     ctxroot: '/openMap'
+                // });
+            }
+
         })
+
     });
 
 // Generate some test data

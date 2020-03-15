@@ -104,7 +104,7 @@ function normalize_near_hits(nearby_hits)
 // This function will take a list of hits and will merge ones within 10 meters to the center
 function merge_hits(hitlist, diameter)
 {
-    
+
     let merged_hits = [];
     let nearby_hits = [];
     // console.log(hitlist);
@@ -226,7 +226,7 @@ let mongoDB = config.db;
 
 // Merge hits
 console.log(json_hits);
-merge_hits(json_hits.features, 20)
+merge_hits(json_hits.features, 20);
 
 
 //
