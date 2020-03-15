@@ -104,7 +104,7 @@ router.route('/')
             }
             else
             {
-                // Fetch the open pot hole tickets from 31 web service
+                // Fetch the open pothole tickets from 31 web service
                 let caselocations = [];
                 // TODO Add decent exception handling and clean this up
                 apiGetAll()
@@ -206,7 +206,7 @@ router.route('/:age')
 
                 });
 
-                // Fetch the open pot hole tickets from 31 web service
+                // Fetch the open pothole tickets from 31 web service
                 let caselocations = [];
                 // TODO Add decent exception handling and clean this up
                 apiGetAll()
